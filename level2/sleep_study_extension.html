@@ -10,6 +10,7 @@
 	$('#new__ID').hide();
 	//-------------------------------------
         var fields="Date of Study|I2_Date,Name & D.O.B|I2_Patient,Type|I2_Study_Type,Item #|I2_Code,Cost|Cost,Reporting Dr|I2_Reporting_Physician,Reported|I2_Reported_text,Outcome,Submitted_on,Report_Comments";
+	fields+=",Colour_1,Colour_2,Colour_3";
         _fields="_Form,"+fields+",Submit Date|DateTime,Submitted by|Author,_Delete";
         //-------------------------------------
         $('#D__ID').on('load',function(){  _set_req(); _request_data(); })
@@ -32,6 +33,12 @@
 			case 'I2_Reported_text':
 				records[I].vm_readonly[field]=true;
 			    	break;
+			case 'Colour_1':
+			case 'Colour_2':
+			case 'Colour_3':
+				if(records[I][field]==undefined) records[I][field]='#eeeeee';
+				VmInclude:__BASE__/vmiis/Common-Code/grid/field_color.js
+				break;
 		}
         }
         //-------------------------------------
