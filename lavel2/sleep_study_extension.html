@@ -1,0 +1,28 @@
+<section>
+    VmInclude:__LIB__/vmiis/Common-Code/grid/grid.html
+</section>
+<script>
+    function F__ID(){
+        //-------------------------------------
+        VmInclude:__LIB__/vmiis/Common-Code/grid/grid2.js
+        VmInclude:__LIB__/vmiis/Common-Code/style/ease-in-out_2.js
+        //-------------------------------------
+        var fields="Date of Study|Date,Name & D.O.B|Patient,Type|Study_Type,Item #|Code,Cost|Study_Income,Reporting Dr|Reporting_Physician,Reported|Reported_text,Outcome,Submitted on,Report_Comments";
+        _fields="_Form,"+fields+",Submit Date|DateTime,Submitted by|Author,_Delete";
+        //-------------------------------------
+        $('#D__ID').on('load',function(){  _set_req(); _request_data(); })
+        //-------------------------------------
+	_set_req=function(){
+		var sql="with tb1 as (select Information,UID,RowNum=row_number() over (order by DT1 DESC) from [TABLE-400448-@S1] )";
+		sql+=",tb2 as (select ID,Information2=Information,PUID,DateTime,Author from [TABLE-20010715-@S1] )";
+	        sql+="select ID,Information2,Information,RowNum from tb1 left join tb2 on PUID=UID where RowNum between @I6 and @I7";
+	        var sql_n="select count(ID) from [TABLE-400448-@S1]";
+	        _req={cmd:'query_records',db_pid:_db_pid,sql:sql,sql_n:sql_n,s1:'"'+$('#keyword__ID').val()+'"',I:$('#I__ID').text(),page_size:$('#page_size__ID').val()}
+	}
+	//-------------------------------------
+    }
+</script>
+<style>
+    VmInclude:__LIB__/vmiis/Common-Code/grid/grid.css
+    VmInclude:__LIB__/vmiis/Common-Code/style/ease-in-out_2.css
+</style>
