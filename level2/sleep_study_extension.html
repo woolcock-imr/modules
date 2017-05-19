@@ -7,19 +7,40 @@
         VmInclude:__LIB__/vmiis/Common-Code/grid/grid2.js
         VmInclude:__LIB__/vmiis/Common-Code/style/ease-in-out_2.js
         //-------------------------------------
-        var fields="Date of Study|Date,Name & D.O.B|Patient,Type|Study_Type,Item #|Code,Cost|Study_Income,Reporting Dr|Reporting_Physician,Reported|Reported_text,Outcome,Submitted on,Report_Comments";
+	$('#new__ID').hide();
+	//-------------------------------------
+        var fields="Date of Study|I2_Date,Name & D.O.B|I2_Patient,Type|I2_Study_Type,Item #|I2_Code,Cost|Cost,Reporting Dr|I2_Reporting_Physician,Reported|I2_Reported_text,Outcome,Submitted_on,Report_Comments";
         _fields="_Form,"+fields+",Submit Date|DateTime,Submitted by|Author,_Delete";
         //-------------------------------------
         $('#D__ID').on('load',function(){  _set_req(); _request_data(); })
         //-------------------------------------
 	_set_req=function(){
-		var sql="with tb1 as (select Information,UID,RowNum=row_number() over (order by DT1 DESC) from [TABLE-400448-@S1] )";
-		sql+=",tb2 as (select ID,Information2=Information,PUID,DateTime,Author from [TABLE-20010715-@S1] )";
-	        sql+="select ID,Information2,Information,RowNum from tb1 left join tb2 on PUID=UID where RowNum between @I6 and @I7";
+		var sql="with tb1 as (select ID,Information,PUID,DateTime,Author from [TABLE-20010715-@S1] )";
+		sql+=",tb2 as (select DT1,Information2=Information,UID,RowNum=row_number() over (order by DT1 DESC,UID DESC) from [TABLE-400448-@S1] )";
+	        sql+="select ID,UID,PUID,Information2,Information,RowNum,DateTime,Author from tb2 left join tb1 on PUID=UID where RowNum between @I6 and @I7";
 	        var sql_n="select count(ID) from [TABLE-400448-@S1]";
 	        _req={cmd:'query_records',db_pid:_db_pid,sql:sql,sql_n:sql_n,s1:'"'+$('#keyword__ID').val()+'"',I:$('#I__ID').text(),page_size:$('#page_size__ID').val()}
 	}
 	//-------------------------------------
+	_cell_render=function(records,I,field,td,set_value,source){
+		switch(field){
+			case 'I2_Date':
+			case 'I2_Patient':
+			case 'I2_Study_Type':
+			case 'I2_Code':
+			case 'I2_Reporting_Physician':
+			case 'I2_Reported_text':
+				records[I].vm_readonly[field]=true;
+			    	break;
+		}
+        }
+        //-------------------------------------
+	_before_submit=function(record,dbv){
+	    dbv.PUID=record.UID;
+
+            return true;
+        };
+        //-------------------------------------
     }
 </script>
 <style>
