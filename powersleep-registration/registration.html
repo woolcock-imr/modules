@@ -1,0 +1,122 @@
+<div id=toolbar__ID>
+    <a id=back__ID>Back</a>
+</div>
+<section style='padding:30px'>
+	<form id=F__ID>
+		<div>
+			First Name
+		</div>
+		<div>
+			<input id=First_Name__ID />
+		</div>
+		<div>
+			Last Name
+		</div>
+		<div>
+			<input id=Last_Name__ID />
+		</div>
+		<div>
+			Email
+		</div>
+		<div>
+			<input id=Email__ID />
+		</div>
+		<div>
+			<br>
+			<br>
+			<a id=submit__ID class=btn__ID>Submit</a>
+		</div>
+	</form>
+</section>
+<script>
+    function F__ID(){
+        //-------------------------------------
+		VmInclude:__PARTS__/toolbar/back.js
+        VmInclude:__PARTS__/style/ease-in-out.2.js
+        //-------------------------------------
+		var _mlist=$vm.module_list;
+		var _mobj=$vm.vm['__ID'];
+		var _sys='';
+		var _config='';
+		var _ids='';
+		if(_mobj.op!=undefined && _mobj.op.sys!=undefined){
+			_sys=_mobj.op.sys;
+			if(_sys.config!=undefined){
+				_config=_sys.config;
+				if(_config.module_ids!=undefined){
+					_ids=_config.module_ids;
+				}
+			}
+		}
+		//-----------------------------------------------
+		var _db_pid=_mlist[_ids['registration']].table_id
+		//-----------------------------------------------
+		$('#D__ID').on('load',function(){
+            $('#F__ID')[0].reset();
+        })
+        //-------------------------------------
+        $('#submit__ID').on('click',function(){
+            var record={}
+			record.First_Name=$('#First_Name__ID').val();
+            record.Last_Name=$('#Last_Name__ID').val();
+            //record.Phone=$('#Phone__ID').val();
+            //record.Postcode=$('#Postcode__ID').val();
+            record.Email=$('#Email__ID').val();
+			var dbv={};
+            dbv.S1=$('#Email__ID').val();
+            dbv.S2=$('#Email__ID').val();
+            var req={cmd:"s1_s2_unique_add_record",db_pid:_db_pid,data:record,dbv:dbv};
+//            $VmAPI.request({data:req,callback:function(res){
+				/*
+                send_email();
+                if($('#Newsletters__ID').is(':checked')==true & $('#Medical_Research__ID').is(':checked')==false){
+                    $vm.load_module_by_name('woolcock_volunteer_database_thankyou',$vm.root_layout_content_slot,{});
+                }
+                else{
+                    //copy username and password to the signin section and trigger a click
+                    $('#username__ID').val($('#Email__ID').val());
+                    $('#password__ID').val($('#Registration_Password__ID').val());
+                    $('#signin__ID').triggerHandler('click');
+                }
+				*/
+				var name=_ids["thanks"];
+				$vm.load_module_by_name(name,$vm.root_layout_content_slot,{
+					name:name,
+					mobj:_mobj,
+					sys:_sys,
+				})
+//            }});
+		})
+    }
+</script>
+<style>
+	VmInclude:__PARTS__/toolbar/toolbar.css
+    VmInclude:__PARTS__/style/ease-in-out.2.css
+	.btn__ID {
+	  background: #3498db;
+	  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+	  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+	  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+	  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+	  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+	  -webkit-border-radius: 5;
+	  -moz-border-radius: 5;
+	  border-radius: 5px;
+	  font-family: Arial;
+	  color: #ffffff;
+	  font-size: 20px;
+	  padding: 10px 20px 10px 20px;
+	  text-decoration: none;
+	  cursor: pointer;
+	}
+
+	.btn__ID:hover {
+	  background: #3cb0fd;
+	  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+	  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+	  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+	  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+	  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+	  text-decoration: none;
+	}
+</style>
