@@ -25,9 +25,8 @@
 		}
         //-------------------------------------
         $('#home__ID').on('click',function(){
-			var name=_ids["home"];
-			$vm.load_module_by_name(name,$vm.root_layout_content_slot,{
-				name:name,
+			var module_id=_ids["home"];
+			$vm.load_module_by_name(module_id,$vm.root_layout_content_slot,{
 				mobj:_mobj,
 				sys:_sys,
 			})

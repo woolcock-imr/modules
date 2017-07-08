@@ -66,26 +66,18 @@
             dbv.S1=$('#Email__ID').val();
             dbv.S2=$('#Email__ID').val();
             var req={cmd:"s1_s2_unique_add_record",db_pid:_db_pid,data:record,dbv:dbv};
-//            $VmAPI.request({data:req,callback:function(res){
-				/*
-                send_email();
-                if($('#Newsletters__ID').is(':checked')==true & $('#Medical_Research__ID').is(':checked')==false){
-                    $vm.load_module_by_name('woolcock_volunteer_database_thankyou',$vm.root_layout_content_slot,{});
-                }
-                else{
-                    //copy username and password to the signin section and trigger a click
-                    $('#username__ID').val($('#Email__ID').val());
-                    $('#password__ID').val($('#Registration_Password__ID').val());
-                    $('#signin__ID').triggerHandler('click');
-                }
-				*/
-				var name=_ids["thanks"];
-				$vm.load_module_by_name(name,$vm.root_layout_content_slot,{
-					name:name,
+            $VmAPI.request({data:req,callback:function(res){
+				if(res.ret=='-1'){
+					$vm.alert('The email already exists');
+					return;
+				}
+                //send_email();
+				var module_id=_ids["thanks"];
+				$vm.load_module_by_name(module_id,$vm.root_layout_content_slot,{
 					mobj:_mobj,
 					sys:_sys,
 				})
-//            }});
+            }});
 		})
     }
 </script>

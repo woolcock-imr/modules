@@ -62,10 +62,6 @@
 			}
 		}
 		//-----------------------------------------------
-        $('#D__ID').on('back',function(){ 	    $('#home_page').triggerHandler('click');        })
-        $('#home__ID').on('click',function(){   $('#main').triggerHandler('click');             })
-        $('#D__ID').css('height',$vm.min_height+'px')
-
 		$('#reg__ID').on('click',function(){
 			var name=_ids["registration"];
 			$vm.load_module_by_name(name,$vm.root_layout_content_slot,{
@@ -178,7 +174,7 @@
 	}
 	.c6_1__ID{
 		border:1px solid #eeeeee;
-		padding:10px;
+		/*padding:10px;*/
 		margin:auto;
 		width:700px;
 		display:flow-root;
