@@ -1,0 +1,168 @@
+<section>
+    VmInclude:__BASE__/vmiis/Common-Code/grid/grid.html
+</section>
+<script>
+    function F__ID(){
+        //-------------------------------------
+        VmInclude:__BASE__/vmiis/Common-Code/grid/grid.js
+        VmInclude:__BASE__/vmiis/Common-Code/style/ease-in-out.js
+        VmInclude:__BASE__/vmiis/Common-Code/clinical_trials/task.js
+        //-------------------------------------
+        _task_fields="CRC_ID,PSG_File_Name,Sleep_Study_Date,Time_in_Bed,Total_Sleep_Time,Sleep_Latency,Sleep_Efficiency,Stage_1,Stage_2,Stage_3,Stage_4,REM,Total_Arousal_Index,AHI,Total_Obstructive_Apnea_Index,Total_Central_Apnea_Index,Total_Mixed_Apnea_Index,Total_Hypopnea_Index,Awake_Average_SaO2,SaO2_min_average,SaO2_nadir,ODI"
+        _fields="_Form|form_module,Status|S3,Notes|NT,Participant,"+_task_fields;
+        _fields+=",Submit Date|DateTime,Submitted by|Author,_Delete,_Hidden|Participant_uid";
+        //-------------------------------------
+        $('#D__ID').on('load',function(){  site_filter_and_request(); })
+        $('#D__ID').on('back',function(){  site_filter_and_request(); })
+        //-------------------------------------
+        _cell_render=function(records,I,field,td,set_value,source){
+            _default_cell_render(records,I,field,td,set_value,source);
+            switch(field){
+                case 'PSG_File_Name':
+                    records[I].vm_custom[field]=true;
+                    if(records[I][field]===undefined) records[I][field]="";
+                    td.data('filename_field',field);
+                    var html="<u style='cursor:pointer'>"+records[I][field]+"</u>";
+                    html+="<span class=file_buttons><a title='Remove the file' class=remove_file>X<a> <a title='Choose a file' class=choose_file>&#9783;<a></span>";
+                    html+="<form><input type=file style='display:none'></input></form>";
+                    td.html(html);
+                    if(records[I][field]==="" || records[I][field]===null || records[I][field]===undefined) td.find('a.remove_file').css('visibility','hidden');
+                    td.find('u').on('click',function(){
+                        var f_name=$(this).html();
+                        var rid=records[I].ID;
+                        if(rid!==undefined){
+                            $vm.open_link({rid:rid,filename:f_name});
+                        }
+                        else alert("No file was found on server.")
+                    });
+                    td.find('a.choose_file').on('click',function(){
+                        if(td.find('form')[0]!==undefined) td.find('form')[0].reset();
+                        td.find('input[type=file]').trigger('click');
+                    })
+                    td.find('a.remove_file').on('click',function(){
+                        td.find('a.remove_file').css('visibility','hidden');
+                        change_file_name("");
+                    })
+                    td.find('input[type=file]').on('change',function(evt){
+                        td.find('a.remove_file').css('visibility','');
+                        var file = this.files[0];
+                        change_file_name(file.name);
+                        read_file(file);
+                    })
+                    var change_file_name=function(name){
+                        set_value(name,records,I,field);
+                        if(source=='grid'){
+                            td.parent().find("td[data-id='"+field+"']").find('u').html(name);
+                        }
+                        else{
+                            td.parent().parent().find("td[data-id='"+field+"']").find('u').html(name);
+                        }
+                    }
+                    var read_file=function(file){
+                        var reader = new FileReader();
+                        reader.onload = (function(e) {
+                            var contents = e.target.result;
+                            var lines=contents.replace(/"/g,'').replace(/\r/,'\n').replace(/\n\n/,'\n').split('\n');
+                            for(i=0;i<lines.length;i++){
+                                 var row=lines[i].split(/=/);
+                                 switch(row[0].trim()) {
+                                     case "Study Date":
+                                     case "Date of study":
+                                        records[I]['Sleep_Study_Date']=row[1];td.parent().find("td[data-id='Sleep_Study_Date']").html(row[1]);break;
+                                     case "Time in Bed (min)":
+                                     case "Time in bed (min)":
+                                        records[I]['Time_in_Bed']=row[1];td.parent().find("td[data-id='Time_in_Bed']").html(row[1]);break;
+                                     case "Total Sleep Time (min)":
+                                     case "Total sleep (min)":
+                                        records[I]['Total_Sleep_Time']=row[1];td.parent().find("td[data-id='Total_Sleep_Time']").html(row[1]);break;
+                                     case "Sleep Latency (min)":
+                                     case "Sleep latency (min)":
+                                        records[I]['Sleep_Latency']=row[1];td.parent().find("td[data-id='Sleep_Latency']").html(row[1]);break;
+                                     case "Sleep Efficiency (%)":
+                                     case "Sleep efficiency (%)":
+                                        $vm('Sleep_Efficiency').val(line[1].trim().replace('%',''));
+                                        records[I]['Sleep_Latency']=row[1];td.parent().find("td[data-id='Sleep_Latency']").html(row[1]);break;
+                                     case "Stage 1 %":
+                                     case "Stage 1 (%)":
+                                     records[I]['Stage_1']=row[1];td.parent().find("td[data-id='Stage_1']").html(row[1]);break;
+                                     case "Stage 2 %":
+                                     case "Stage 2 (%)":
+                                        records[I]['Stage_2']=row[1];td.parent().find("td[data-id='Stage_2']").html(row[1]);break;
+                                     case "Stage 3 %":
+                                     case "Stage 3 (%)":
+                                        records[I]['Stage_3']=row[1];td.parent().find("td[data-id='Stage_3']").html(row[1]);break;
+                                     case "Stage 4 %":
+                                     case "Stage 4 (%)":
+                                        records[I]['Stage_4']=row[1];td.parent().find("td[data-id='Stage_4']").html(row[1]);break;
+                                     case "REM %":
+                                     case "REM sleep (%)":
+                                        records[I]['REM']=row[1];td.parent().find("td[data-id='REM']").html(row[1]);break;
+                                     case "Total Arousal Index TST (p/hr)":
+                                     case "Total Arousals Index (TST)":
+                                     case "EEG arousal index (including FLAs) / hr":
+                                        records[I]['Total_Arousal_Index']=row[1];td.parent().find("td[data-id='Total_Arousal_Index']").html(row[1]);break;
+                                     case "Apnea + Hypopnea Index (p/hr)":
+                                     case "Apnea Hypopnea Index (TST)":
+                                     case "Total AHI Index":
+                                        records[I]['AHI']=row[1];td.parent().find("td[data-id='AHI']").html(row[1]);break;
+                                     case "Obstructive Apnea Index (TST)":
+                                     case "Obstructive Apnea Index":
+                                     case "Obstructive Apnea Index (p/hr)":
+                                        records[I]['Total_Obstructive_Apnea_Index']=row[1];td.parent().find("td[data-id='Total_Obstructive_Apnea_Index']").html(row[1]);break;
+                                     case "Central Apnea Index (TST)":
+                                     case "Central Apnea Index":
+                                     case "Central Apnea Index (p/hr)":
+                                        records[I]['Total_Central_Apnea_Index']=row[1];td.parent().find("td[data-id='Total_Central_Apnea_Index']").html(row[1]);break;
+                                     case "Mixed Apnea Index (TST)":
+                                     case "Mixed Apnea Index":
+                                     case "Mixed Apnea Index (p/hr)":
+                                        records[I]['Total_Mixed_Apnea_Index']=row[1];td.parent().find("td[data-id='Total_Mixed_Apnea_Index']").html(row[1]);break;
+                                     case "Hypopnea Index (p/hr)":
+                                     case "Total Hypopnea Index (TST)":
+                                     case "Hypopnea Index":
+                                        records[I]['Total_Hypopnea_Index']=row[1];td.parent().find("td[data-id='Total_Hypopnea_Index']").html(row[1]);break;
+                                     case "SaO2 awake average (%)":
+                                     case "Mean SaO2% (Wake)":
+                                     case "Average SaO2 (%)  WK":
+                                        records[I]['Awake_Average_SaO2']=row[1];td.parent().find("td[data-id='Awake_Average_SaO2']").html(row[1]);break;
+                                     case "Mean SaO2% (TST)":
+                                     case "Average SaO2 (%) TOTAL":
+                                        records[I]['SaO2_min_average']=row[1];td.parent().find("td[data-id='SaO2_min_average']").html(row[1]);break;
+                                     case "Average SaO2 desaturation (%)":
+                                         if((parseInt(row[1].trim()))>(100-parseInt(row[1].trim())))  {records[I]['SaO2_min_average']=row[1];td.parent().find("td[data-id='SaO2_min_average']").html(row[1]);}
+                                         else {records[I]['SaO2_min_average']=(100-parseInt(row[1].trim())).toFixed(1);td.parent().find("td[data-id='SaO2_min_average']").html((100-parseInt(row[1].trim())).toFixed(1));}
+                                         break;
+                                     case "Minimum SaO2 desaturation (%)":
+                                     case "Min SaO2% (TST)":
+                                     case "Minimum SaO2 (%)":
+                                        records[I]['SaO2_nadir']=row[1];td.parent().find("td[data-id='SaO2_nadir']").html(row[1]);break;
+                                     case "Desat Event Index (TST)":
+                                     case "Desat Index SaO2 (#/hour) TOTAL":
+                                        records[I]['ODI']=row[1];td.parent().find("td[data-id='ODI']").html(row[1]);break;
+                                }
+                            }
+                        });
+                        reader.readAsText(file);
+                    }
+                break;
+            }
+        }
+        //-------------------------------------
+        //document.getElementById('PVT_File_Name').addEventListener('change', handleFileSelect,false);
+        //-------------------------------------
+        _before_submit=function(record,dbv){
+            return _set_status_and_participant(record,dbv);
+        }
+        //-------------------------------------
+    }
+</script>
+<style>
+    VmInclude:__BASE__/vmiis/Common-Code/grid/grid.css
+    ul.ui-autocomplete.ui-menu{font-size:12px}
+    .ui-autocomplete li:hover{
+        color:White;
+        background:#96B202;
+        font-weight:normal;
+        outline:none;
+    }
+</style>

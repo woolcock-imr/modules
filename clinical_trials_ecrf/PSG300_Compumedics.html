@@ -1,0 +1,281 @@
+<section>
+    VmInclude:__BASE__/vmiis/Common-Code/grid/grid.html
+</section>
+<script>
+    function F__ID(){
+        //-------------------------------------
+        VmInclude:__BASE__/vmiis/Common-Code/grid/grid.js
+        VmInclude:__BASE__/vmiis/Common-Code/style/ease-in-out.js
+        VmInclude:__BASE__/vmiis/Common-Code/clinical_trials/task.js
+        //-------------------------------------
+        _task_fields="CRC_ID,PSG_File_Name,DOB,Gender,Study_Date,Study_Start_Time,Study_End_Time,Time_in_Bed_min,Sleep_Latency_min,REM_Latency_min,Sleep_Efficiency_Percent,Total_Time_Awake_During_Sleep_Period_min,Total_Sleep_Time_min,NREM_min,NREM_Percent,REM_min,REM_Percent,Stage_1_min,Stage_1_Percent,Stage_2_min,Stage_2_Percent,Stage_3_min,Stage_3_Percent,Stage_4_min,Stage_4_Percent,Unsure_sleep_stage_min,Total_Number_of_Arousals,Number_of_ARO_RES_Arousal_1,Number_of_ARO_Limb_Arousal_2,Number_of_ARO_SPONT_Arousal_3,Number_of__Arousal_4,Number_of__Arousal_5,Total_Arousal_Index_TST_p_hr,ARO_RES_Arousal_1_Index_TST_p_hr,ARO_Limb_Arousal_2_Index_TST_p_hr,ARO_SPONT_Arousal_3_Index_TST_p_hr,Arousal_4_Index_TST_p_hr,Arousal_5_Index_TST_p_hr,Total_Arousal_Index_in_REM_p_hr,ARO_RES_Arousal_1_Index_in_REM_p_hr,ARO_Limb_Arousal_2_Index_in_REM_p_hr,ARO_SPONT_Arousal_3_Index_in_REM_p_hr,Arousal_4_Index_in_REM_p_hr,Arousal_5_Index_in_REM_p_hr,Total_Arousal_Index_in_NREM_p_hr,ARO_RES_Arousal_1_Index_in_NREM_p_hr,ARO_Limb_Arousal_2_Index_in_NREM_p_hr,ARO_SPONT_Arousal_3_Index_in_NREM_p_hr,Arousal_4_Index_in_NREM_p_hr,Arousal_5_Index_in_NREM_p_hr,Central_Apnea_Average_duration_sec,Central_Apnea_Total_duration_min,Central_Apnea_Total_Number,Central_Apnea_Index_p_hr,Obstructive_Apnea_Average_duration_sec,Obstructive_Apnea_Total_duration_min,Obstructive_Apnea_Total_Number,Obstructive_Apnea_Index_p_hr,Hypopnea_Average_duration_sec,Hypopnea_Total_duration_min,Hypopnea_Total_Number,Hypopnea_Index_p_hr,Chicago_Hypopnea_Average_duration_sec,Chicago_Hypopnea_Total_duration_min,Chicago_Hypopnea_Total_Number,Chicago_Hypopnea_Index_p_hr,Apnea_plus_Hypopnea_Average_duration_sec,Apnea_plus_Hypopnea_Total_duration_min,Apnea_plus_Hypopnea_Total_Number,Apnea_plus_Hypopnea_Index_p_hr,SaO2Percent_min_average_in_back_position_NREM,SaO2Percent_min_average_in_other_position_NREM,SaO2Percent_min_average_in_all_position_NREM,SaO2Percent_min_average_in_back_position_REM,SaO2Percent_min_average_in_other_position_REM,SaO2Percent_min_average_in_all_position_REM,SaO2Percent_lowest_in_back_position_NREM,SaO2Percent_lowest_in_other_position_NREM,SaO2Percent_lowest_in_all_position_NREM,SaO2Percent_lowest_in_back_position_REM,SaO2Percent_lowest_in_other_position_REM,SaO2Percent_lowest_in_all_position_REM,Total_duration_min_Chicago_Hypopnea_in_back_position_NREM,Total_duration_min_Chicago_Hypopnea_in_other_position_NREM,Total_duration_min_Chicago_Hypopnea_in_all_position_NREM,Total_duration_min_Chicago_Hypopnea_in_back_position_REM,Total_duration_min_Chicago_Hypopnea_in_other_position_REM,Total_duration_min_Chicago_Hypopnea_in_all_position_REM,Total_duration_min_Central_Apnea_in_back_position_NREM,Total_duration_min_Central_Apnea_in_other_position_NREM,Total_duration_min_Central_Apnea_in_all_position_NREM,Total_duration_min_Central_Apnea_in_back_position_REM,Total_duration_min_Central_Apnea_in_other_position_REM,Total_duration_min_Central_Apnea_in_all_position_REM,Total_duration_min_Obstructive_Apnea_in_back_position_NREM,Total_duration_min_Obstructive_Apnea_in_other_position_NREM,Total_duration_min_Obstructive_Apnea_in_all_position_NREM,Total_duration_min_Obstructive_Apnea_in_back_position_REM,Total_duration_min_Obstructive_Apnea_in_other_position_REM,Total_duration_min_Obstructive_Apnea_in_all_position_REM,Total_duration_min_Mixed_Apnea_in_back_position_NREM,Total_duration_min_Mixed_Apnea_in_other_position_NREM,Total_duration_min_Mixed_Apnea_in_all_position_NREM,Total_duration_min_Mixed_Apnea_in_back_position_REM,Total_duration_min_Mixed_Apnea_in_other_position_REM,Total_duration_min_Mixed_Apnea_in_all_position_REM,Total_duration_min_Hypopnea_in_back_position_NREM,Total_duration_min_Hypopnea_in_other_position_NREM,Total_duration_min_Hypopnea_in_all_position_NREM,Total_duration_min_Hypopnea_in_back_position_REM,Total_duration_min_Hypopnea_in_other_position_REM,Total_duration_min_Hypopnea_in_all_position_REM,Total_duration_min_Apnea_plus_Hypopnea_in_back_position_NREM,Total_duration_min_Apnea_plus_Hypopnea_in_other_position_NREM,Total_duration_min_Apnea_plus_Hypopnea_in_all_position_NREM,Total_duration_min_Apnea_plus_Hypopnea_in_back_position_REM,Total_duration_min_Apnea_plus_Hypopnea_in_other_position_REM,Total_duration_min_Apnea_plus_Hypopnea_in_all_position_REM,Index_p_hr_Chicago_Hypopnea_in_back_position_NREM,Index_p_hr_Chicago_Hypopnea_in_other_position_NREM,Index_p_hr_Chicago_Hypopnea_in_all_position_NREM,Index_p_hr_Chicago_Hypopnea_in_back_position_REM,Index_p_hr_Chicago_Hypopnea_in_other_position_REM,Index_p_hr_Chicago_Hypopnea_in_all_position_REM,Index_p_hr_Central_Apnea_in_back_position_NREM,Index_p_hr_Central_Apnea_in_other_position_NREM,Index_p_hr_Central_Apnea_in_all_position_NREM,Index_p_hr_Central_Apnea_in_back_position_REM,Index_p_hr_Central_Apnea_in_other_position_REM,Index_p_hr_Central_Apnea_in_all_position_REM,Index_p_hr_Obstructive_Apnea_in_back_position_NREM,Index_p_hr_Obstructive_Apnea_in_other_position_NREM,Index_p_hr_Obstructive_Apnea_in_all_position_NREM,Index_p_hr_Obstructive_Apnea_in_back_position_REM,Index_p_hr_Obstructive_Apnea_in_other_position_REM,Index_p_hr_Obstructive_Apnea_in_all_position_REM,Index_p_hr_Mixed_Apnea_in_back_position_NREM,Index_p_hr_Mixed_Apnea_in_other_position_NREM,Index_p_hr_Mixed_Apnea_in_all_position_NREM,Index_p_hr_Mixed_Apnea_in_back_position_REM,Index_p_hr_Mixed_Apnea_in_other_position_REM,Index_p_hr_Mixed_Apnea_in_all_position_REM,Index_p_hr_Hypopnea_in_back_position_NREM,Index_p_hr_Hypopnea_in_other_position_NREM,Index_p_hr_Hypopnea_in_all_position_NREM,Index_p_hr_Hypopnea_in_back_position_REM,Index_p_hr_Hypopnea_in_other_position_REM,Index_p_hr_Hypopnea_in_all_position_REM,Index_p_hr_Apnea_plus_Hypopnea_in_back_position_NREM,Index_p_hr_Apnea_plus_Hypopnea_in_other_position_NREM,Index_p_hr_Apnea_plus_Hypopnea_in_all_position_NREM,Index_p_hr_Apnea_plus_Hypopnea_in_back_position_REM,Index_p_hr_Apnea_plus_Hypopnea_in_other_position_REM,Index_p_hr_Apnea_plus_Hypopnea_in_all_position_REM,Sleep_Time_in_back_min,Sleep_Time_in_non-back_min,Time_in_REM_on_back_min,Time_in_NREM_on_back_min,Supine_NREM_RDI,Supine_REM_RDI,Non-supine_NREM_RDI,Non-supine_REM_RDI,NREM_RDI,REM_RDI,TOTAL_RDI,Total_RDI_without_Chicago_Hypopneas,Minimum_SaO2_desaturation_Percent,SaO2_awake_average_Percent,Average_SaO2_desaturation_Percent,Mean_Apnea___Hypopnea_duration_sec,Longest_Apnea_sec,Longest_Hypopnea_sec,SaO2_time_below_90Percent,SaO2_time_below_80Percent,SaO2_time_below_75Percent,SaO2_time_below_70Percent,SaO2_time_below_60Percent,Number_of_SaO2_desaturations_greater_than_or_equal_to_3Percent,Number_of_SaO2_desaturations_greater_than_or_equal_to_4Percent,Number_of_SaO2_desaturations_greater_than_or_equal_to_5Percent,ODI_GE_3_Percent,Number_of_PLMs_NREM,Number_of_PLMs_REM,Number_of_PLM_Total_Sleep,PLM_Index_NREM,PLM_Index_REM,PLM_Index_Total";
+        _fields="_Form|form_module,Status|S3,Notes|NT,Participant,"+_task_fields;
+        _fields+=",Submit Date|DateTime,Submitted by|Author,_Delete,_Hidden|Participant_uid";
+        //-------------------------------------
+        $('#D__ID').on('load',function(){  site_filter_and_request(); })
+        $('#D__ID').on('back',function(){  site_filter_and_request(); })
+        //-------------------------------------
+        _cell_render=function(records,I,field,td,set_value,source){
+            _default_cell_render(records,I,field,td,set_value,source);
+            switch(field){
+                case 'PSG_File_Name':
+                    records[I].vm_custom[field]=true;
+                    if(records[I][field]===undefined) records[I][field]="";
+                    td.data('filename_field',field);
+                    var html="<u style='cursor:pointer'>"+records[I][field]+"</u>";
+                    html+="<span class=file_buttons><a title='Remove the file' class=remove_file>X<a> <a title='Choose a file' class=choose_file>&#9783;<a></span>";
+                    html+="<form><input type=file style='display:none'></input></form>";
+                    td.html(html);
+                    if(records[I][field]==="" || records[I][field]===null || records[I][field]===undefined) td.find('a.remove_file').css('visibility','hidden');
+                    td.find('u').on('click',function(){
+                        var f_name=$(this).html();
+                        var rid=records[I].ID;
+                        if(rid!==undefined){
+                            $vm.open_link({rid:rid,filename:f_name});
+                        }
+                        else alert("No file was found on server.")
+                    });
+                    td.find('a.choose_file').on('click',function(){
+                        if(td.find('form')[0]!==undefined) td.find('form')[0].reset();
+                        td.find('input[type=file]').trigger('click');
+                    })
+                    td.find('a.remove_file').on('click',function(){
+                        td.find('a.remove_file').css('visibility','hidden');
+                        change_file_name("");
+                    })
+                    td.find('input[type=file]').on('change',function(evt){
+                        td.find('a.remove_file').css('visibility','');
+                        var file = this.files[0];
+                        change_file_name(file.name);
+                        read_file(file);
+                    })
+                    var change_file_name=function(name){
+                        set_value(name,records,I,field);
+                        if(source=='grid'){
+                            td.parent().find("td[data-id='"+field+"']").find('u').html(name);
+                        }
+                        else{
+                            td.parent().parent().find("td[data-id='"+field+"']").find('u').html(name);
+                        }
+                    }
+                    var read_file=function(file){
+                        var reader = new FileReader();
+                        reader.onload = (function(e) {
+                            var contents = e.target.result;
+                            var lines=contents.replace(/"/g,'').replace(/\r/,'\n').replace(/\n\n/,'\n').split('\n');
+                            for(i=0;i<lines.length;i++){
+                                 var row=lines[i].split(/=/);
+                                 switch(row[0].trim()) {
+                                     case 'Date of Birth': records[I]['DOB']=row[1];td.parent().find("td[data-id='DOB']").html(row[1]);break;
+                                     case 'Gender': records[I]['Gender']=row[1];td.parent().find("td[data-id='Gender']").html(row[1]);break;
+                                    // case 'MRN': records[I]['MRN']=row[1];td.parent().find("td[data-id='MRN']").html(row[1]);break;
+                                     case 'Study Date': records[I]['Study_Date']=row[1];td.parent().find("td[data-id='Study_Date']").html(row[1]);break;
+                                     case 'Study Start Time': records[I]['Study_Start_Time']=row[1];td.parent().find("td[data-id='Study_Start_Time']").html(row[1]);break;
+                                     case 'Study End Time': records[I]['Study_End_Time']=row[1];td.parent().find("td[data-id='Study_End_Time']").html(row[1]);break;
+                                     case 'Time in Bed (min)': records[I]['Time_in_Bed_min']=row[1];td.parent().find("td[data-id='Time_in_Bed_min']").html(row[1]);break;
+                                     case 'Sleep Latency (min)': records[I]['Sleep_Latency_min']=row[1];td.parent().find("td[data-id='Sleep_Latency_min']").html(row[1]);break;
+                                     case 'REM Latency (min)': records[I]['REM_Latency_min']=row[1];td.parent().find("td[data-id='REM_Latency_min']").html(row[1]);break;
+                                     case 'Sleep Efficiency (%)': records[I]['Sleep_Efficiency_Percent']=row[1];td.parent().find("td[data-id='Sleep_Efficiency_Percent']").html(row[1]);break;
+                                     case 'Total Time Awake During Sleep Period (min)': records[I]['Total_Time_Awake_During_Sleep_Period_min']=row[1];td.parent().find("td[data-id='Total_Time_Awake_During_Sleep_Period_min']").html(row[1]);break;
+                                     case 'Total Sleep Time (min)': records[I]['Total_Sleep_Time_min']=row[1];td.parent().find("td[data-id='Total_Sleep_Time_min']").html(row[1]);break;
+                                     case 'NREM (min)': records[I]['NREM_min']=row[1];td.parent().find("td[data-id='NREM_min']").html(row[1]);break;
+                                     case 'NREM %': records[I]['NREM_Percent']=row[1];td.parent().find("td[data-id='NREM_Percent']").html(row[1]);break;
+                                     case 'REM (min)': records[I]['REM_min']=row[1];td.parent().find("td[data-id='REM_min']").html(row[1]);break;
+                                     case 'REM %': records[I]['REM_Percent']=row[1];td.parent().find("td[data-id='REM_Percent']").html(row[1]);break;
+                                     case 'Stage 1 (min)': records[I]['Stage_1_min']=row[1];td.parent().find("td[data-id='Stage_1_min']").html(row[1]);break;
+                                     case 'Stage 1 %': records[I]['Stage_1_Percent']=row[1];td.parent().find("td[data-id='Stage_1_Percent']").html(row[1]);break;
+                                     case 'Stage 2 (min)': records[I]['Stage_2_min']=row[1];td.parent().find("td[data-id='Stage_2_min']").html(row[1]);break;
+                                     case 'Stage 2 %': records[I]['Stage_2_Percent']=row[1];td.parent().find("td[data-id='Stage_2_Percent']").html(row[1]);break;
+                                     case 'Stage 3 (min)': records[I]['Stage_3_min']=row[1];td.parent().find("td[data-id='Stage_3_min']").html(row[1]);break;
+                                     case 'Stage 3 %': records[I]['Stage_3_Percent']=row[1];td.parent().find("td[data-id='Stage_3_Percent']").html(row[1]);break;
+                                     case 'Stage 4 (min)': records[I]['Stage_4_min']=row[1];td.parent().find("td[data-id='Stage_4_min']").html(row[1]);break;
+                                     case 'Stage 4 %': records[I]['Stage_4_Percent']=row[1];td.parent().find("td[data-id='Stage_4_Percent']").html(row[1]);break;
+                                     case 'Unsure sleep stage (min)': records[I]['Unsure_sleep_stage_min']=row[1];td.parent().find("td[data-id='Unsure_sleep_stage_min']").html(row[1]);break;
+                                     case 'Total Number of Arousals': records[I]['Total_Number_of_Arousals']=row[1];td.parent().find("td[data-id='Total_Number_of_Arousals']").html(row[1]);break;
+                                     case 'Number of ARO RES Arousal 1': records[I]['Number_of_ARO_RES_Arousal_1']=row[1];td.parent().find("td[data-id='Number_of_ARO_RES_Arousal_1']").html(row[1]);break;
+                                     case 'Number of ARO Limb Arousal 2': records[I]['Number_of_ARO_Limb_Arousal_2']=row[1];td.parent().find("td[data-id='Number_of_ARO_Limb_Arousal_2']").html(row[1]);break;
+                                     case 'Number of ARO SPONT Arousal 3': records[I]['Number_of_ARO_SPONT_Arousal_3']=row[1];td.parent().find("td[data-id='Number_of_ARO_SPONT_Arousal_3']").html(row[1]);break;
+                                     case 'Number of  Arousal 4': records[I]['Number_of__Arousal_4']=row[1];td.parent().find("td[data-id='Number_of__Arousal_4']").html(row[1]);break;
+                                     case 'Number of  Arousal 5': records[I]['Number_of__Arousal_5']=row[1];td.parent().find("td[data-id='Number_of__Arousal_5']").html(row[1]);break;
+                                     case 'Total Arousal Index TST (p/hr)': records[I]['Total_Arousal_Index_TST_p_hr']=row[1];td.parent().find("td[data-id='Total_Arousal_Index_TST_p_hr']").html(row[1]);break;
+                                     case 'ARO RES Arousal 1 Index TST (p/hr)': records[I]['ARO_RES_Arousal_1_Index_TST_p_hr']=row[1];td.parent().find("td[data-id='ARO_RES_Arousal_1_Index_TST_p_hr']").html(row[1]);break;
+                                     case 'ARO Limb Arousal 2 Index TST (p/hr)': records[I]['ARO_Limb_Arousal_2_Index_TST_p_hr']=row[1];td.parent().find("td[data-id='ARO_Limb_Arousal_2_Index_TST_p_hr']").html(row[1]);break;
+                                     case 'ARO SPONT Arousal 3 Index TST (p/hr)': records[I]['ARO_SPONT_Arousal_3_Index_TST_p_hr']=row[1];td.parent().find("td[data-id='ARO_SPONT_Arousal_3_Index_TST_p_hr']").html(row[1]);break;
+                                     case 'Arousal 4 Index TST (p/hr)': records[I]['Arousal_4_Index_TST_p_hr']=row[1];td.parent().find("td[data-id='Arousal_4_Index_TST_p_hr']").html(row[1]);break;
+                                     case 'Arousal 5 Index TST (p/hr)': records[I]['Arousal_5_Index_TST_p_hr']=row[1];td.parent().find("td[data-id='Arousal_5_Index_TST_p_hr']").html(row[1]);break;
+                                     case 'Total Arousal Index in REM (p/hr)': records[I]['Total_Arousal_Index_in_REM_p_hr']=row[1];td.parent().find("td[data-id='Total_Arousal_Index_in_REM_p_hr']").html(row[1]);break;
+                                     case 'ARO RES Arousal 1 Index in REM (p/hr)': records[I]['ARO_RES_Arousal_1_Index_in_REM_p_hr']=row[1];td.parent().find("td[data-id='ARO_RES_Arousal_1_Index_in_REM_p_hr']").html(row[1]);break;
+                                     case 'ARO Limb Arousal 2 Index in REM (p/hr)': records[I]['ARO_Limb_Arousal_2_Index_in_REM_p_hr']=row[1];td.parent().find("td[data-id='ARO_Limb_Arousal_2_Index_in_REM_p_hr']").html(row[1]);break;
+                                     case 'ARO SPONT Arousal 3 Index in REM (p/hr)': records[I]['ARO_SPONT_Arousal_3_Index_in_REM_p_hr']=row[1];td.parent().find("td[data-id='ARO_SPONT_Arousal_3_Index_in_REM_p_hr']").html(row[1]);break;
+                                     case 'Arousal 4 Index in REM (p/hr)': records[I]['Arousal_4_Index_in_REM_p_hr']=row[1];td.parent().find("td[data-id='Arousal_4_Index_in_REM_p_hr']").html(row[1]);break;
+                                     case 'Arousal 5 Index in REM (p/hr)': records[I]['Arousal_5_Index_in_REM_p_hr']=row[1];td.parent().find("td[data-id='Arousal_5_Index_in_REM_p_hr']").html(row[1]);break;
+                                     case 'Total Arousal Index in NREM (p/hr)': records[I]['Total_Arousal_Index_in_NREM_p_hr']=row[1];td.parent().find("td[data-id='Total_Arousal_Index_in_NREM_p_hr']").html(row[1]);break;
+                                     case 'ARO RES Arousal 1 Index in NREM (p/hr)': records[I]['ARO_RES_Arousal_1_Index_in_NREM_p_hr']=row[1];td.parent().find("td[data-id='ARO_RES_Arousal_1_Index_in_NREM_p_hr']").html(row[1]);break;
+                                     case 'ARO Limb Arousal 2 Index in NREM (p/hr)': records[I]['ARO_Limb_Arousal_2_Index_in_NREM_p_hr']=row[1];td.parent().find("td[data-id='ARO_Limb_Arousal_2_Index_in_NREM_p_hr']").html(row[1]);break;
+                                     case 'ARO SPONT Arousal 3 Index in NREM (p/hr)': records[I]['ARO_SPONT_Arousal_3_Index_in_NREM_p_hr']=row[1];td.parent().find("td[data-id='ARO_SPONT_Arousal_3_Index_in_NREM_p_hr']").html(row[1]);break;
+                                     case 'Arousal 4 Index in NREM (p/hr)': records[I]['Arousal_4_Index_in_NREM_p_hr']=row[1];td.parent().find("td[data-id='Arousal_4_Index_in_NREM_p_hr']").html(row[1]);break;
+                                     case 'Arousal 5 Index in NREM (p/hr)': records[I]['Arousal_5_Index_in_NREM_p_hr']=row[1];td.parent().find("td[data-id='Arousal_5_Index_in_NREM_p_hr']").html(row[1]);break;
+                                     case 'Central Apnea Average duration (sec)': records[I]['Central_Apnea_Average_duration_sec']=row[1];td.parent().find("td[data-id='Central_Apnea_Average_duration_sec']").html(row[1]);break;
+                                     case 'Central Apnea Total duration (min)': records[I]['Central_Apnea_Total_duration_min']=row[1];td.parent().find("td[data-id='Central_Apnea_Total_duration_min']").html(row[1]);break;
+                                     case 'Central Apnea Total Number': records[I]['Central_Apnea_Total_Number']=row[1];td.parent().find("td[data-id='Central_Apnea_Total_Number']").html(row[1]);break;
+                                     case 'Central Apnea Index (p/hr)': records[I]['Central_Apnea_Index_p_hr']=row[1];td.parent().find("td[data-id='Central_Apnea_Index_p_hr']").html(row[1]);break;
+                                     case 'Obstructive Apnea Average duration (sec)': records[I]['Obstructive_Apnea_Average_duration_sec']=row[1];td.parent().find("td[data-id='Obstructive_Apnea_Average_duration_sec']").html(row[1]);break;
+                                     case 'Obstructive Apnea Total duration (min)': records[I]['Obstructive_Apnea_Total_duration_min']=row[1];td.parent().find("td[data-id='Obstructive_Apnea_Total_duration_min']").html(row[1]);break;
+                                     case 'Obstructive Apnea Total Number': records[I]['Obstructive_Apnea_Total_Number']=row[1];td.parent().find("td[data-id='Obstructive_Apnea_Total_Number']").html(row[1]);break;
+                                     case 'Obstructive Apnea Index (p/hr)': records[I]['Obstructive_Apnea_Index_p_hr']=row[1];td.parent().find("td[data-id='Obstructive_Apnea_Index_p_hr']").html(row[1]);break;
+                                     case 'Hypopnea Average duration (sec)': records[I]['Hypopnea_Average_duration_sec']=row[1];td.parent().find("td[data-id='Hypopnea_Average_duration_sec']").html(row[1]);break;
+                                     case 'Hypopnea Total duration (min)': records[I]['Hypopnea_Total_duration_min']=row[1];td.parent().find("td[data-id='Hypopnea_Total_duration_min']").html(row[1]);break;
+                                     case 'Hypopnea Total Number': records[I]['Hypopnea_Total_Number']=row[1];td.parent().find("td[data-id='Hypopnea_Total_Number']").html(row[1]);break;
+                                     case 'Hypopnea Index (p/hr)': records[I]['Hypopnea_Index_p_hr']=row[1];td.parent().find("td[data-id='Hypopnea_Index_p_hr']").html(row[1]);break;
+                                     case 'Chicago Hypopnea Average duration (sec)': records[I]['Chicago_Hypopnea_Average_duration_sec']=row[1];td.parent().find("td[data-id='Chicago_Hypopnea_Average_duration_sec']").html(row[1]);break;
+                                     case 'Chicago Hypopnea Total duration (min)': records[I]['Chicago_Hypopnea_Total_duration_min']=row[1];td.parent().find("td[data-id='Chicago_Hypopnea_Total_duration_min']").html(row[1]);break;
+                                     case 'Chicago Hypopnea Total Number': records[I]['Chicago_Hypopnea_Total_Number']=row[1];td.parent().find("td[data-id='Chicago_Hypopnea_Total_Number']").html(row[1]);break;
+                                     case 'Chicago Hypopnea Index (p/hr)': records[I]['Chicago_Hypopnea_Index_p_hr']=row[1];td.parent().find("td[data-id='Chicago_Hypopnea_Index_p_hr']").html(row[1]);break;
+                                     case 'Apnea + Hypopnea Average duration (sec)': records[I]['Apnea_plus_Hypopnea_Average_duration_sec']=row[1];td.parent().find("td[data-id='Apnea_plus_Hypopnea_Average_duration_sec']").html(row[1]);break;
+                                     case 'Apnea + Hypopnea Total duration (min)': records[I]['Apnea_plus_Hypopnea_Total_duration_min']=row[1];td.parent().find("td[data-id='Apnea_plus_Hypopnea_Total_duration_min']").html(row[1]);break;
+                                     case 'Apnea + Hypopnea Total Number': records[I]['Apnea_plus_Hypopnea_Total_Number']=row[1];td.parent().find("td[data-id='Apnea_plus_Hypopnea_Total_Number']").html(row[1]);break;
+                                     case 'Apnea + Hypopnea Index (p/hr)': records[I]['Apnea_plus_Hypopnea_Index_p_hr']=row[1];td.parent().find("td[data-id='Apnea_plus_Hypopnea_Index_p_hr']").html(row[1]);break;
+                                     case 'SaO2% min average in back position (NREM)': records[I]['SaO2Percent_min_average_in_back_position_NREM']=row[1];td.parent().find("td[data-id='SaO2Percent_min_average_in_back_position_NREM']").html(row[1]);break;
+                                     case 'SaO2% min average in other position (NREM)': records[I]['SaO2Percent_min_average_in_other_position_NREM']=row[1];td.parent().find("td[data-id='SaO2Percent_min_average_in_other_position_NREM']").html(row[1]);break;
+                                     case 'SaO2% min average in all position (NREM)': records[I]['SaO2Percent_min_average_in_all_position_NREM']=row[1];td.parent().find("td[data-id='SaO2Percent_min_average_in_all_position_NREM']").html(row[1]);break;
+                                     case 'SaO2% min average in back position (REM)': records[I]['SaO2Percent_min_average_in_back_position_REM']=row[1];td.parent().find("td[data-id='SaO2Percent_min_average_in_back_position_REM']").html(row[1]);break;
+                                     case 'SaO2% min average in other position (REM)': records[I]['SaO2Percent_min_average_in_other_position_REM']=row[1];td.parent().find("td[data-id='SaO2Percent_min_average_in_other_position_REM']").html(row[1]);break;
+                                     case 'SaO2% min average in all position (REM)': records[I]['SaO2Percent_min_average_in_all_position_REM']=row[1];td.parent().find("td[data-id='SaO2Percent_min_average_in_all_position_REM']").html(row[1]);break;
+                                     case 'SaO2% lowest in back position (NREM)': records[I]['SaO2Percent_lowest_in_back_position_NREM']=row[1];td.parent().find("td[data-id='SaO2Percent_lowest_in_back_position_NREM']").html(row[1]);break;
+                                     case 'SaO2% lowest in other position (NREM)': records[I]['SaO2Percent_lowest_in_other_position_NREM']=row[1];td.parent().find("td[data-id='SaO2Percent_lowest_in_other_position_NREM']").html(row[1]);break;
+                                     case 'SaO2% lowest in all position (NREM)': records[I]['SaO2Percent_lowest_in_all_position_NREM']=row[1];td.parent().find("td[data-id='SaO2Percent_lowest_in_all_position_NREM']").html(row[1]);break;
+                                     case 'SaO2% lowest in back position (REM)': records[I]['SaO2Percent_lowest_in_back_position_REM']=row[1];td.parent().find("td[data-id='SaO2Percent_lowest_in_back_position_REM']").html(row[1]);break;
+                                     case 'SaO2% lowest in other position (REM)': records[I]['SaO2Percent_lowest_in_other_position_REM']=row[1];td.parent().find("td[data-id='SaO2Percent_lowest_in_other_position_REM']").html(row[1]);break;
+                                     case 'SaO2% lowest in all position (REM)': records[I]['SaO2Percent_lowest_in_all_position_REM']=row[1];td.parent().find("td[data-id='SaO2Percent_lowest_in_all_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Chicago Hypopnea in back position (NREM)': records[I]['Total_duration_min_Chicago_Hypopnea_in_back_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Chicago_Hypopnea_in_back_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Chicago Hypopnea in other position (NREM)': records[I]['Total_duration_min_Chicago_Hypopnea_in_other_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Chicago_Hypopnea_in_other_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Chicago Hypopnea in all position (NREM)': records[I]['Total_duration_min_Chicago_Hypopnea_in_all_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Chicago_Hypopnea_in_all_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Chicago Hypopnea in back position (REM)': records[I]['Total_duration_min_Chicago_Hypopnea_in_back_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Chicago_Hypopnea_in_back_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Chicago Hypopnea in other position (REM)': records[I]['Total_duration_min_Chicago_Hypopnea_in_other_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Chicago_Hypopnea_in_other_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Chicago Hypopnea in all position (REM)': records[I]['Total_duration_min_Chicago_Hypopnea_in_all_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Chicago_Hypopnea_in_all_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Central Apnea in back position (NREM)': records[I]['Total_duration_min_Central_Apnea_in_back_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Central_Apnea_in_back_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Central Apnea in other position (NREM)': records[I]['Total_duration_min_Central_Apnea_in_other_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Central_Apnea_in_other_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Central Apnea in all position (NREM)': records[I]['Total_duration_min_Central_Apnea_in_all_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Central_Apnea_in_all_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Central Apnea in back position (REM)': records[I]['Total_duration_min_Central_Apnea_in_back_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Central_Apnea_in_back_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Central Apnea in other position (REM)': records[I]['Total_duration_min_Central_Apnea_in_other_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Central_Apnea_in_other_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Central Apnea in all position (REM)': records[I]['Total_duration_min_Central_Apnea_in_all_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Central_Apnea_in_all_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Obstructive Apnea in back position (NREM)': records[I]['Total_duration_min_Obstructive_Apnea_in_back_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Obstructive_Apnea_in_back_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Obstructive Apnea in other position (NREM)': records[I]['Total_duration_min_Obstructive_Apnea_in_other_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Obstructive_Apnea_in_other_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Obstructive Apnea in all position (NREM)': records[I]['Total_duration_min_Obstructive_Apnea_in_all_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Obstructive_Apnea_in_all_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Obstructive Apnea in back position (REM)': records[I]['Total_duration_min_Obstructive_Apnea_in_back_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Obstructive_Apnea_in_back_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Obstructive Apnea in other position (REM)': records[I]['Total_duration_min_Obstructive_Apnea_in_other_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Obstructive_Apnea_in_other_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Obstructive Apnea in all position (REM)': records[I]['Total_duration_min_Obstructive_Apnea_in_all_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Obstructive_Apnea_in_all_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Mixed Apnea in back position (NREM)': records[I]['Total_duration_min_Mixed_Apnea_in_back_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Mixed_Apnea_in_back_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Mixed Apnea in other position (NREM)': records[I]['Total_duration_min_Mixed_Apnea_in_other_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Mixed_Apnea_in_other_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Mixed Apnea in all position (NREM)': records[I]['Total_duration_min_Mixed_Apnea_in_all_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Mixed_Apnea_in_all_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Mixed Apnea in back position (REM)': records[I]['Total_duration_min_Mixed_Apnea_in_back_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Mixed_Apnea_in_back_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Mixed Apnea in other position (REM)': records[I]['Total_duration_min_Mixed_Apnea_in_other_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Mixed_Apnea_in_other_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Mixed Apnea in all position (REM)': records[I]['Total_duration_min_Mixed_Apnea_in_all_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Mixed_Apnea_in_all_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Hypopnea in back position (NREM)': records[I]['Total_duration_min_Hypopnea_in_back_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Hypopnea_in_back_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Hypopnea in other position (NREM)': records[I]['Total_duration_min_Hypopnea_in_other_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Hypopnea_in_other_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Hypopnea in all position (NREM)': records[I]['Total_duration_min_Hypopnea_in_all_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Hypopnea_in_all_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Hypopnea in back position (REM)': records[I]['Total_duration_min_Hypopnea_in_back_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Hypopnea_in_back_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Hypopnea in other position (REM)': records[I]['Total_duration_min_Hypopnea_in_other_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Hypopnea_in_other_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Hypopnea in all position (REM)': records[I]['Total_duration_min_Hypopnea_in_all_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Hypopnea_in_all_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Apnea + Hypopnea in back position (NREM)': records[I]['Total_duration_min_Apnea_plus_Hypopnea_in_back_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Apnea_plus_Hypopnea_in_back_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Apnea + Hypopnea in other position (NREM)': records[I]['Total_duration_min_Apnea_plus_Hypopnea_in_other_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Apnea_plus_Hypopnea_in_other_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Apnea + Hypopnea in all position (NREM)': records[I]['Total_duration_min_Apnea_plus_Hypopnea_in_all_position_NREM']=row[1];td.parent().find("td[data-id='Total_duration_min_Apnea_plus_Hypopnea_in_all_position_NREM']").html(row[1]);break;
+                                     case 'Total duration (min) Apnea + Hypopnea in back position (REM)': records[I]['Total_duration_min_Apnea_plus_Hypopnea_in_back_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Apnea_plus_Hypopnea_in_back_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Apnea + Hypopnea in other position (REM)': records[I]['Total_duration_min_Apnea_plus_Hypopnea_in_other_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Apnea_plus_Hypopnea_in_other_position_REM']").html(row[1]);break;
+                                     case 'Total duration (min) Apnea + Hypopnea in all position (REM)': records[I]['Total_duration_min_Apnea_plus_Hypopnea_in_all_position_REM']=row[1];td.parent().find("td[data-id='Total_duration_min_Apnea_plus_Hypopnea_in_all_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Chicago Hypopnea in back position (NREM)': records[I]['Index_p_hr_Chicago_Hypopnea_in_back_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Chicago_Hypopnea_in_back_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Chicago Hypopnea in other position (NREM)': records[I]['Index_p_hr_Chicago_Hypopnea_in_other_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Chicago_Hypopnea_in_other_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Chicago Hypopnea in all position (NREM)': records[I]['Index_p_hr_Chicago_Hypopnea_in_all_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Chicago_Hypopnea_in_all_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Chicago Hypopnea in back position (REM)': records[I]['Index_p_hr_Chicago_Hypopnea_in_back_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Chicago_Hypopnea_in_back_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Chicago Hypopnea in other position (REM)': records[I]['Index_p_hr_Chicago_Hypopnea_in_other_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Chicago_Hypopnea_in_other_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Chicago Hypopnea in all position (REM)': records[I]['Index_p_hr_Chicago_Hypopnea_in_all_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Chicago_Hypopnea_in_all_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Central Apnea in back position (NREM)': records[I]['Index_p_hr_Central_Apnea_in_back_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Central_Apnea_in_back_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Central Apnea in other position (NREM)': records[I]['Index_p_hr_Central_Apnea_in_other_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Central_Apnea_in_other_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Central Apnea in all position (NREM)': records[I]['Index_p_hr_Central_Apnea_in_all_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Central_Apnea_in_all_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Central Apnea in back position (REM)': records[I]['Index_p_hr_Central_Apnea_in_back_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Central_Apnea_in_back_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Central Apnea in other position (REM)': records[I]['Index_p_hr_Central_Apnea_in_other_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Central_Apnea_in_other_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Central Apnea in all position (REM)': records[I]['Index_p_hr_Central_Apnea_in_all_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Central_Apnea_in_all_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Obstructive Apnea in back position (NREM)': records[I]['Index_p_hr_Obstructive_Apnea_in_back_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Obstructive_Apnea_in_back_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Obstructive Apnea in other position (NREM)': records[I]['Index_p_hr_Obstructive_Apnea_in_other_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Obstructive_Apnea_in_other_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Obstructive Apnea in all position (NREM)': records[I]['Index_p_hr_Obstructive_Apnea_in_all_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Obstructive_Apnea_in_all_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Obstructive Apnea in back position (REM)': records[I]['Index_p_hr_Obstructive_Apnea_in_back_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Obstructive_Apnea_in_back_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Obstructive Apnea in other position (REM)': records[I]['Index_p_hr_Obstructive_Apnea_in_other_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Obstructive_Apnea_in_other_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Obstructive Apnea in all position (REM)': records[I]['Index_p_hr_Obstructive_Apnea_in_all_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Obstructive_Apnea_in_all_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Mixed Apnea in back position (NREM)': records[I]['Index_p_hr_Mixed_Apnea_in_back_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Mixed_Apnea_in_back_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Mixed Apnea in other position (NREM)': records[I]['Index_p_hr_Mixed_Apnea_in_other_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Mixed_Apnea_in_other_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Mixed Apnea in all position (NREM)': records[I]['Index_p_hr_Mixed_Apnea_in_all_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Mixed_Apnea_in_all_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Mixed Apnea in back position (REM)': records[I]['Index_p_hr_Mixed_Apnea_in_back_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Mixed_Apnea_in_back_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Mixed Apnea in other position (REM)': records[I]['Index_p_hr_Mixed_Apnea_in_other_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Mixed_Apnea_in_other_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Mixed Apnea in all position (REM)': records[I]['Index_p_hr_Mixed_Apnea_in_all_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Mixed_Apnea_in_all_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Hypopnea in back position (NREM)': records[I]['Index_p_hr_Hypopnea_in_back_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Hypopnea_in_back_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Hypopnea in other position (NREM)': records[I]['Index_p_hr_Hypopnea_in_other_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Hypopnea_in_other_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Hypopnea in all position (NREM)': records[I]['Index_p_hr_Hypopnea_in_all_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Hypopnea_in_all_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Hypopnea in back position (REM)': records[I]['Index_p_hr_Hypopnea_in_back_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Hypopnea_in_back_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Hypopnea in other position (REM)': records[I]['Index_p_hr_Hypopnea_in_other_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Hypopnea_in_other_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Hypopnea in all position (REM)': records[I]['Index_p_hr_Hypopnea_in_all_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Hypopnea_in_all_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Apnea + Hypopnea in back position (NREM)': records[I]['Index_p_hr_Apnea_plus_Hypopnea_in_back_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Apnea_plus_Hypopnea_in_back_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Apnea + Hypopnea in other position (NREM)': records[I]['Index_p_hr_Apnea_plus_Hypopnea_in_other_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Apnea_plus_Hypopnea_in_other_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Apnea + Hypopnea in all position (NREM)': records[I]['Index_p_hr_Apnea_plus_Hypopnea_in_all_position_NREM']=row[1];td.parent().find("td[data-id='Index_p_hr_Apnea_plus_Hypopnea_in_all_position_NREM']").html(row[1]);break;
+                                     case 'Index (p/hr) Apnea + Hypopnea in back position (REM)': records[I]['Index_p_hr_Apnea_plus_Hypopnea_in_back_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Apnea_plus_Hypopnea_in_back_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Apnea + Hypopnea in other position (REM)': records[I]['Index_p_hr_Apnea_plus_Hypopnea_in_other_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Apnea_plus_Hypopnea_in_other_position_REM']").html(row[1]);break;
+                                     case 'Index (p/hr) Apnea + Hypopnea in all position (REM)': records[I]['Index_p_hr_Apnea_plus_Hypopnea_in_all_position_REM']=row[1];td.parent().find("td[data-id='Index_p_hr_Apnea_plus_Hypopnea_in_all_position_REM']").html(row[1]);break;
+                                     case 'Sleep Time in back (min)': records[I]['Sleep_Time_in_back_min']=row[1];td.parent().find("td[data-id='Sleep_Time_in_back_min']").html(row[1]);break;
+                                     case 'Sleep Time in non-back (min)': records[I]['Sleep_Time_in_non-back_min']=row[1];td.parent().find("td[data-id='Sleep_Time_in_non-back_min']").html(row[1]);break;
+                                     case 'Time in REM on back (min)': records[I]['Time_in_REM_on_back_min']=row[1];td.parent().find("td[data-id='Time_in_REM_on_back_min']").html(row[1]);break;
+                                     case 'Time in NREM on back (min)': records[I]['Time_in_NREM_on_back_min']=row[1];td.parent().find("td[data-id='Time_in_NREM_on_back_min']").html(row[1]);break;
+                                     case 'Supine NREM RDI': records[I]['Supine_NREM_RDI']=row[1];td.parent().find("td[data-id='Supine_NREM_RDI']").html(row[1]);break;
+                                     case 'Supine REM RDI': records[I]['Supine_REM_RDI']=row[1];td.parent().find("td[data-id='Supine_REM_RDI']").html(row[1]);break;
+                                     case 'Non-supine NREM RDI': records[I]['Non-supine_NREM_RDI']=row[1];td.parent().find("td[data-id='Non-supine_NREM_RDI']").html(row[1]);break;
+                                     case 'Non-supine REM RDI': records[I]['Non-supine_REM_RDI']=row[1];td.parent().find("td[data-id='Non-supine_REM_RDI']").html(row[1]);break;
+                                     case 'NREM RDI': records[I]['NREM_RDI']=row[1];td.parent().find("td[data-id='NREM_RDI']").html(row[1]);break;
+                                     case 'REM RDI': records[I]['REM_RDI']=row[1];td.parent().find("td[data-id='REM_RDI']").html(row[1]);break;
+                                     case 'TOTAL RDI': records[I]['TOTAL_RDI']=row[1];td.parent().find("td[data-id='TOTAL_RDI']").html(row[1]);break;
+                                     case 'Total RDI without Chicago Hypopneas': records[I]['Total_RDI_without_Chicago_Hypopneas']=row[1];td.parent().find("td[data-id='Total_RDI_without_Chicago_Hypopneas']").html(row[1]);break;
+                                     case 'Minimum SaO2 desaturation (%)': records[I]['Minimum_SaO2_desaturation_Percent']=row[1];td.parent().find("td[data-id='Minimum_SaO2_desaturation_Percent']").html(row[1]);break;
+                                     case 'SaO2 awake average (%)': records[I]['SaO2_awake_average_Percent']=row[1];td.parent().find("td[data-id='SaO2_awake_average_Percent']").html(row[1]);break;
+                                     case 'Average SaO2 desaturation (%)': records[I]['Average_SaO2_desaturation_Percent']=row[1];td.parent().find("td[data-id='Average_SaO2_desaturation_Percent']").html(row[1]);break;
+                                     case 'Mean Apnea / Hypopnea duration (sec)': records[I]['Mean_Apnea___Hypopnea_duration_sec']=row[1];td.parent().find("td[data-id='Mean_Apnea___Hypopnea_duration_sec']").html(row[1]);break;
+                                     case 'Longest Apnea (sec)': records[I]['Longest_Apnea_sec']=row[1];td.parent().find("td[data-id='Longest_Apnea_sec']").html(row[1]);break;
+                                     case 'Longest Hypopnea (sec)': records[I]['Longest_Hypopnea_sec']=row[1];td.parent().find("td[data-id='Longest_Hypopnea_sec']").html(row[1]);break;
+                                     case 'SaO2 time below 90%': records[I]['SaO2_time_below_90Percent']=row[1];td.parent().find("td[data-id='SaO2_time_below_90Percent']").html(row[1]);break;
+                                     case 'SaO2 time below 80%': records[I]['SaO2_time_below_80Percent']=row[1];td.parent().find("td[data-id='SaO2_time_below_80Percent']").html(row[1]);break;
+                                     case 'SaO2 time below 75%': records[I]['SaO2_time_below_75Percent']=row[1];td.parent().find("td[data-id='SaO2_time_below_75Percent']").html(row[1]);break;
+                                     case 'SaO2 time below 70%': records[I]['SaO2_time_below_70Percent']=row[1];td.parent().find("td[data-id='SaO2_time_below_70Percent']").html(row[1]);break;
+                                     case 'SaO2 time below 60%': records[I]['SaO2_time_below_60Percent']=row[1];td.parent().find("td[data-id='SaO2_time_below_60Percent']").html(row[1]);break;
+                                     case 'Number of SaO2 desaturations greater than or equal to 3%': records[I]['Number_of_SaO2_desaturations_greater_than_or_equal_to_3Percent']=row[1];td.parent().find("td[data-id='Number_of_SaO2_desaturations_greater_than_or_equal_to_3Percent']").html(row[1]);break;
+                                     case 'Number of SaO2 desaturations greater than or equal to 4%': records[I]['Number_of_SaO2_desaturations_greater_than_or_equal_to_4Percent']=row[1];td.parent().find("td[data-id='Number_of_SaO2_desaturations_greater_than_or_equal_to_4Percent']").html(row[1]);break;
+                                     case 'Number of SaO2 desaturations greater than or equal to 5%': records[I]['Number_of_SaO2_desaturations_greater_than_or_equal_to_5Percent']=row[1];td.parent().find("td[data-id='Number_of_SaO2_desaturations_greater_than_or_equal_to_5Percent']").html(row[1]);break;
+                                     case 'ODI (>': records[I]['ODI_GE_3_Percent']=row[1];td.parent().find("td[data-id='ODI_GE_3_Percent']").html(row[2]);break;
+                                     case 'Number of PLMs NREM': records[I]['Number_of_PLMs_NREM']=row[1];td.parent().find("td[data-id='Number_of_PLMs_NREM']").html(row[1]);break;
+                                     case 'Number of PLMs REM': records[I]['Number_of_PLMs_REM']=row[1];td.parent().find("td[data-id='Number_of_PLMs_REM']").html(row[1]);break;
+                                     case 'Number of PLM Total Sleep': records[I]['Number_of_PLM_Total_Sleep']=row[1];td.parent().find("td[data-id='Number_of_PLM_Total_Sleep']").html(row[1]);break;
+                                     case 'PLM Index NREM': records[I]['PLM_Index_NREM']=row[1];td.parent().find("td[data-id='PLM_Index_NREM']").html(row[1]);break;
+                                     case 'PLM Index REM': records[I]['PLM_Index_REM']=row[1];td.parent().find("td[data-id='PLM_Index_REM']").html(row[1]);break;
+                                     case 'PLM Index Total': records[I]['PLM_Index_Total']=row[1];td.parent().find("td[data-id='PLM_Index_Total']").html(row[1]);break;
+                                }
+                            }
+                        });
+                        reader.readAsText(file);
+                    }
+                break;
+            }
+        }
+        //-------------------------------------
+        //document.getElementById('PVT_File_Name').addEventListener('change', handleFileSelect,false);
+        //-------------------------------------
+        _before_submit=function(record,dbv){
+            return _set_status_and_participant(record,dbv);
+        }
+        //-------------------------------------
+    }
+</script>
+<style>
+    VmInclude:__BASE__/vmiis/Common-Code/grid/grid.css
+    ul.ui-autocomplete.ui-menu{font-size:12px}
+    .ui-autocomplete li:hover{
+        color:White;
+        background:#96B202;
+        font-weight:normal;
+        outline:none;
+    }
+</style>

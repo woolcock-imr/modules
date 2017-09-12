@@ -1,0 +1,350 @@
+<section>
+    VmInclude:__BASE__/vmiis/Common-Code/grid/grid.html
+</section>
+<script>
+    function F__ID(){
+        //-------------------------------------
+        VmInclude:__BASE__/vmiis/Common-Code/grid/grid.js
+        VmInclude:__BASE__/vmiis/Common-Code/style/ease-in-out.js
+        VmInclude:__BASE__/vmiis/Common-Code/clinical_trials/task.js
+        //-------------------------------------
+        _task_fields="CRC_ID,PSG_File_Name,Date_of_birth,Age,Date_of_study,Study_commenced_at,Study_finished_at,Study_duration_min,Time_in_bed_min,Total_sleep_min,Total_wake_min,Sleep_efficiency_percent,Sleep_latency_min,REM_latency_min,NREM_min,REM_min,Stage_shifts,Stage_1_min,Stage_1_percent,Stage_2_min,Stage_2_percent,Stage_3_min,Stage_3_percent,Stage_4_min,Stage_4_percent,SWS_sleep_min,SWS_sleep_percent,REM_sleep_min,REM_sleep_percent,EEG_arousal_index,EEG_arousal_index_including_FLAs_per_hr,Flow_limitation_arousal_FLA_index_per_hr,EEG_arousal_REM_Total_Number,EEG_arousal_NREM_Total_Number,EEG_arousal_Total_Total_Number,EEG_arousal_REM_With_resp_event,EEG_arousal_NREM_With_resp_event,EEG_arousal_Total_With_resp_event,EEG_arousal_REM_With_resp_event_and_desat,EEG_arousal_NREM_With_resp_event_and_desat,EEG_arousal_Total_With_resp_event_and_desat,EEG_arousal_REM_Leg_Mvt_arousal,EEG_arousal_NREM_Leg_Mvt_arousal,EEG_arousal_Total_Leg_Mvt_arousal,EEG_arousal_REM_Spontaneous_arousal,EEG_arousal_NREM_Spontaneous_arousal,EEG_arousal_Total_Spontaneous_arousal,Central_Apnea_Number,Central_Apnea_Max_sec,Central_Apnea_Mean_sec,Central_Apnea_Tot_time_min,Central_Apnea_percent_of_TST,Central_Apnea_Index,Obstructive_Apnea_Number,Obstructive_Apnea_Max_sec,Obstructive_Apnea_Mean_sec,Obstructive_Apnea_Tot_time_min,Obstructive_Apnea_percent_of_TST,Obstructive_Apnea_Index,Hypopnea_Number,Hypopnea_Max_sec,Hypopnea_Mean_sec,Hypopnea_Tot_time_min,Hypopnea_percent_of_TST,Hypopnea_Index,Chicago_Hypopnea_Number,Chicago_Hypopnea_Index,Total_A_H_Number,Total_A_H_Max_sec,Total_A_H_Mean_sec,Total_A_H_Tot_time_min,Total_A_H_percent_of_TST,Total_AHI_Index,REM_RDI,NREM_RDI,Total_RDI,SaO2_lt_50percent_min_WK,SaO2_lt_50percent_min_REM,SaO2_lt_50percent_min_NREM,SaO2_lt_50percent_min_TOTAL,SaO2_lt_60percent_min_WK,SaO2_lt_60percent_min_REM,SaO2_lt_60percent_min_NREM,SaO2_lt_60percent_min_TOTAL,SaO2_lt_70percent_min_WK,SaO2_lt_70percent_min_REM,SaO2_lt_70percent_min_NREM,SaO2_lt_70percent_min_TOTAL,SaO2_lt_75percent_min_WK,SaO2_lt_75percent_min_REM,SaO2_lt_75percent_min_NREM,SaO2_lt_75percent_min_TOTAL,SaO2_lt_80percent_min_WK,SaO2_lt_80percent_min_REM,SaO2_lt_80percent_min_NREM,SaO2_lt_80percent_min_TOTAL,SaO2_lt_85percent_min_WK,SaO2_lt_85percent_min_REM,SaO2_lt_85percent_min_NREM,SaO2_lt_85percent_min_TOTAL,SaO2_lt_90percent_min_WK,SaO2_lt_90percent_min_REM,SaO2_lt_90percent_min_NREM,SaO2_lt_90percent_min_TOTAL,SaO2_lt_95percent_min_WK,SaO2_lt_95percent_min_REM,SaO2_lt_95percent_min_NREM,SaO2_lt_95percent_min_TOTAL,Average_SaO2_percent__WK,Average_SaO2_percent_REM,Average_SaO2_percent_NREM,Average_SaO2_percent_TOTAL,Desat_Index_SaO2_Number_per_hour_WK,Desat_Index_SaO2_Number_per_hour_REM,Desat_Index_SaO2_Number_per_hour_NREM,Desat_Index_SaO2_Number_per_hour_TOTAL,Desat_max_SaO2_percent_WK,Desat_max_SaO2_percent_REM,Desat_max_SaO2_percent_NREM,Desat_max_SaO2_percent_TOTAL,Average_SaO2_desaturation_percent,Minimum_SaO2_percent,Position_Left_time_min,Position_Left_sleep_percent,Position_Left_REM_percent,Position_Left_SWS_percent,Position_Left_Central_apnea_Number,Position_Left_Obstructive_apnea_Number,Position_Left_Hypopnea_Number,Position_Left_desaturation_Number,Position_Left_AHI,Position_Prone_time_min,Position_Prone_sleep_percent,Position_Prone_REM_percent,Position_Prone_SWS_percent,Position_Prone_Central_apnea_Number,Position_Prone_Obstructive_apnea_Number,Position_Prone_Hypopnea_Number,Position_Prone_desaturation_Number,Position_Prone_AHI,Position_Prone_Left_time_min,Position_Prone_Left_sleep_percent,Position_Prone_Left_REM_percent,Position_Prone_Left_SWS_percent,Position_Prone_Left_Central_apnea_Number,Position_Prone_Left_Obstructive_apnea_Number,Position_Prone_Left_Hypopnea_Number,Position_Prone_Left_desaturation_Number,Position_Prone_Left_AHI,Position_Supine_time_min,Position_Supine_sleep_percent,Position_Supine_REM_percent,Position_Supine_SWS_percent,Position_Supine_Central_apnea_Number,Position_Supine_Obstructive_apnea_Number,Position_Supine_Hypopnea_Number,Position_Supine_desaturation_Number,Position_Supine_AHI,Position_Supine_Left_time_min,Position_Supine_Left_sleep_percent,Position_Supine_Left_REM_percent,Position_Supine_Left_SWS_percent,Position_Supine_Left_Central_apnea_Number,Position_Supine_Left_Obstructive_apnea_Number,Position_Supine_Left_Hypopnea_Number,Position_Supine_Left_desaturation_Number,Position_Supine_Left_AHI,Position_Right_time_min,Position_Right_sleep_percent,Position_Right_REM_percent,Position_Right_SWS_percent,Position_Right_Central_apnea_Number,Position_Right_Obstructive_apnea_Number,Position_Right_Hypopnea_Number,Position_Right_desaturation_Number,Position_Right_AHI,Position_Supine_Right_time_min,Position_Supine_Right_sleep_percent,Position_Supine_Right_REM_percent,Position_Supine_Right_SWS_percent,Position_Supine_Right_Central_apnea_Number,Position_Supine_Right_Obstructive_apnea_Number,Position_Supine_Right_Hypopnea_Number,Position_Supine_Right_desaturation_Number,Position_Supine_Right_AHI,Position_Prone_Right_time_min,Position_Prone_Right_sleep_percent,Position_Prone_Right_REM_percent,Position_Prone_Right_SWS_percent,Position_Prone_Right_Central_apnea_Number,Position_Prone_Right_Obstructive_apnea_Number,Position_Prone_Right_Hypopnea_Number,Position_Prone_Right_desaturation_Number,Position_Prone_Right_AHI,Total_number_of_snoring_episodes,Mean_duration_of_snoring_episodes_sec,Total_time_with_snoring_min,Total_time_with_snoring_percent,Mean_duration_of_PLM_episodes_sec,Total_time_with_PLM_min,Total_time_with_PLM_percent_of_sleep,PLM_sequences_episodes,Total_number_of_Leg_movements,PLM_Index_per_hr,Mean_Heart_Rate_BPM_WK,Mean_Heart_Rate_BPM_REM,Mean_Heart_Rate_BPM_NREM,Mean_Heart_Rate_BPM_S1,Mean_Heart_Rate_BPM_S2,Mean_Heart_Rate_BPM_S3,Mean_Heart_Rate_BPM_S4,Median_Heart_Rate_BPM_WK,Median_Heart_Rate_BPM_REM,Median_Heart_Rate_BPM_NREM,Median_Heart_Rate_BPM_S1,Median_Heart_Rate_BPM_S2,Median_Heart_Rate_BPM_S3,Median_Heart_Rate_BPM_S4,Mean_RR_BPM_WK,Mean_RR_BPM_REM,Mean_RR_BPM_NREM,Mean_RR_BPM_S1,Mean_RR_BPM_S2,Mean_RR_BPM_S3,Mean_RR_BPM_S4,TcCO2_gte_75_torr_Wake_duration_min,TcCO2_gte_75_torr_REM_duration_min,TcCO2_gte_75_torr_NREM_duration_min,TcCO2_gte_75_torr_TOTAL_duration_min,TcCO2_gte_65_torr_Wake_duration_min,TcCO2_gte_65_torr_REM_duration_min,TcCO2_gte_65_torr_NREM_duration_min,TcCO2_gte_65_torr_TOTAL_duration_min,TcCO2_gte_55_torr_Wake_duration_min,TcCO2_gte_55_torr_REM_duration_min,TcCO2_gte_55_torr_NREM_duration_min,TcCO2_gte_55_torr_TOTAL_duration_min,TcCO2_gte_50_torr_WaKe_duration_min,TcCO2_gte_50_torr_REM_duration_min,TcCO2_gte_50_torr_NREM_duration_min,TcCO2_gte_50_torr_TOTAL_duration_min,TcCO2_gte_47_torr_WaKe_duration_min,TcCO2_gte_47_torr_REM_duration_min,TcCO2_gte_47_torr_NREM_duration_min,TcCO2_gte_47_torr_TOTAL_duration_min,TcCO2_gte_40_torr_Wake_duration_min,TcCO2_gte_40_torr_REM_duration_min,TcCO2_gte_40_torr_NREM_duration_min,TcCO2_gte_40_torr_TOTAL_duration_min,TcCO2_gte_30_torr_Wake_duration_min,TcCO2_gte_30_torr_REM_duration_min,TcCO2_gte_30_torr_NREM_duration_min,TcCO2_gte_30_torr_TOTAL_duration_min,Average_TcCO2_torr_Wake,Average_TcCO2_torr_REM,Average_TcCO2_torr_NREM,Average_TcCO2_torr_TOTAL";
+        _fields="_Form|form_module,Status|S3,Notes|NT,Participant,"+_task_fields;
+        _fields+=",Submit Date|DateTime,Submitted by|Author,_Delete,_Hidden|Participant_uid";
+        //-------------------------------------
+        $('#D__ID').on('load',function(){  site_filter_and_request(); })
+        $('#D__ID').on('back',function(){  site_filter_and_request(); })
+        //-------------------------------------
+        _cell_render=function(records,I,field,td,set_value,source){
+            _default_cell_render(records,I,field,td,set_value,source);
+            switch(field){
+                case 'PSG_File_Name':
+                    records[I].vm_custom[field]=true;
+                    if(records[I][field]===undefined) records[I][field]="";
+                    td.data('filename_field',field);
+                    var html="<u style='cursor:pointer'>"+records[I][field]+"</u>";
+                    html+="<span class=file_buttons><a title='Remove the file' class=remove_file>X<a> <a title='Choose a file' class=choose_file>&#9783;<a></span>";
+                    html+="<form><input type=file style='display:none'></input></form>";
+                    td.html(html);
+                    if(records[I][field]==="" || records[I][field]===null || records[I][field]===undefined) td.find('a.remove_file').css('visibility','hidden');
+                    td.find('u').on('click',function(){
+                        var f_name=$(this).html();
+                        var rid=records[I].ID;
+                        if(rid!==undefined){
+                            $vm.open_link({rid:rid,filename:f_name});
+                        }
+                        else alert("No file was found on server.")
+                    });
+                    td.find('a.choose_file').on('click',function(){
+                        if(td.find('form')[0]!==undefined) td.find('form')[0].reset();
+                        td.find('input[type=file]').trigger('click');
+                    })
+                    td.find('a.remove_file').on('click',function(){
+                        td.find('a.remove_file').css('visibility','hidden');
+                        change_file_name("");
+                    })
+                    td.find('input[type=file]').on('change',function(evt){
+                        td.find('a.remove_file').css('visibility','');
+                        var file = this.files[0];
+                        change_file_name(file.name);
+                        read_file(file);
+                    })
+                    var change_file_name=function(name){
+                        set_value(name,records,I,field);
+                        if(source=='grid'){
+                            td.parent().find("td[data-id='"+field+"']").find('u').html(name);
+                        }
+                        else{
+                            td.parent().parent().find("td[data-id='"+field+"']").find('u').html(name);
+                        }
+                    }
+                    var read_file=function(file){
+                        var reader = new FileReader();
+                        reader.onload = (function(e) {
+                            var contents = e.target.result;
+                            var lines=contents.replace(/"/g,'').replace(/\r/,'\n').replace(/\n\n/,'\n').split('\n');
+                            for(i=0;i<lines.length;i++){
+                                 var row=lines[i].split(/=/);
+                                 switch(row[0].trim()) {
+                                     case 'Date of birth':records[I]['Date_of_birth']=row[1];td.parent().find("td[data-id='Date_of_birth']").html(row[1]);break;
+                                     case 'Age':records[I]['Age']=row[1];td.parent().find("td[data-id='Age']").html(row[1]);break;
+                                     case 'Date of study':records[I]['Date_of_study']=row[1];td.parent().find("td[data-id='Date_of_study']").html(row[1]);break;
+                                     case 'Study commenced at':records[I]['Study_commenced_at']=row[1];td.parent().find("td[data-id='Study_commenced_at']").html(row[1]);break;
+                                     case 'Study finished at':records[I]['Study_finished_at']=row[1];td.parent().find("td[data-id='Study_finished_at']").html(row[1]);break;
+                                     case 'Study duration (min)':records[I]['Study_duration_min']=row[1];td.parent().find("td[data-id='Study_duration_min']").html(row[1]);break;
+                                     case 'Time in bed (min)':records[I]['Time_in_bed_min']=row[1];td.parent().find("td[data-id='Time_in_bed_min']").html(row[1]);break;
+                                     case 'Total sleep (min)':records[I]['Total_sleep_min']=row[1];td.parent().find("td[data-id='Total_sleep_min']").html(row[1]);break;
+                                     case 'Total wake (min)':records[I]['Total_wake_min']=row[1];td.parent().find("td[data-id='Total_wake_min']").html(row[1]);break;
+                                     case 'Sleep efficiency (%)':records[I]['Sleep_efficiency_percent']=row[1];td.parent().find("td[data-id='Sleep_efficiency_percent']").html(row[1]);break;
+                                     case 'Sleep latency (min)':records[I]['Sleep_latency_min']=row[1];td.parent().find("td[data-id='Sleep_latency_min']").html(row[1]);break;
+                                     case 'REM latency (min)':records[I]['REM_latency_min']=row[1];td.parent().find("td[data-id='REM_latency_min']").html(row[1]);break;
+                                     case 'NREM (min)':records[I]['NREM_min']=row[1];td.parent().find("td[data-id='NREM_min']").html(row[1]);break;
+                                     case 'REM (min)':records[I]['REM_min']=row[1];td.parent().find("td[data-id='REM_min']").html(row[1]);break;
+                                     case 'Stage shifts':records[I]['Stage_shifts']=row[1];td.parent().find("td[data-id='Stage_shifts']").html(row[1]);break;
+                                     case 'Stage 1 (min)':records[I]['Stage_1_min']=row[1];td.parent().find("td[data-id='Stage_1_min']").html(row[1]);break;
+                                     case 'Stage 1 (%)':records[I]['Stage_1_percent']=row[1];td.parent().find("td[data-id='Stage_1_percent']").html(row[1]);break;
+                                     case 'Stage 2 (min)':records[I]['Stage_2_min']=row[1];td.parent().find("td[data-id='Stage_2_min']").html(row[1]);break;
+                                     case 'Stage 2 (%)':records[I]['Stage_2_percent']=row[1];td.parent().find("td[data-id='Stage_2_percent']").html(row[1]);break;
+                                     case 'Stage 3 (min)':records[I]['Stage_3_min']=row[1];td.parent().find("td[data-id='Stage_3_min']").html(row[1]);break;
+                                     case 'Stage 3 (%)':records[I]['Stage_3_percent']=row[1];td.parent().find("td[data-id='Stage_3_percent']").html(row[1]);break;
+                                     case 'Stage 4 (min)':records[I]['Stage_4_min']=row[1];td.parent().find("td[data-id='Stage_4_min']").html(row[1]);break;
+                                     case 'Stage 4 (%)':records[I]['Stage_4_percent']=row[1];td.parent().find("td[data-id='Stage_4_percent']").html(row[1]);break;
+                                     case 'SWS sleep (min)':records[I]['SWS_sleep_min']=row[1];td.parent().find("td[data-id='SWS_sleep_min']").html(row[1]);break;
+                                     case 'SWS sleep (%)':records[I]['SWS_sleep_percent']=row[1];td.parent().find("td[data-id='SWS_sleep_percent']").html(row[1]);break;
+                                     case 'REM sleep (min)':records[I]['REM_sleep_min']=row[1];td.parent().find("td[data-id='REM_sleep_min']").html(row[1]);break;
+                                     case 'REM sleep (%)':records[I]['REM_sleep_percent']=row[1];td.parent().find("td[data-id='REM_sleep_percent']").html(row[1]);break;
+                                     case 'EEG arousal index':records[I]['EEG_arousal_index']=row[1];td.parent().find("td[data-id='EEG_arousal_index']").html(row[1]);break;
+                                     case 'EEG arousal index (including FLAs) / hr':records[I]['EEG_arousal_index_including_FLAs_per_hr']=row[1];td.parent().find("td[data-id='EEG_arousal_index_including_FLAs_per_hr']").html(row[1]);break;
+                                     case 'Flow limitation arousal (FLA) index / hr':records[I]['Flow_limitation_arousal_FLA_index_per_hr']=row[1];td.parent().find("td[data-id='Flow_limitation_arousal_FLA_index_per_hr']").html(row[1]);break;
+                                     case 'EEG arousal REM (Total Number)':records[I]['EEG_arousal_REM_Total_Number']=row[1];td.parent().find("td[data-id='EEG_arousal_REM_Total_Number']").html(row[1]);break;
+                                     case 'EEG arousal NREM (Total Number)':records[I]['EEG_arousal_NREM_Total_Number']=row[1];td.parent().find("td[data-id='EEG_arousal_NREM_Total_Number']").html(row[1]);break;
+                                     case 'EEG arousal Total (Total Number)':records[I]['EEG_arousal_Total_Total_Number']=row[1];td.parent().find("td[data-id='EEG_arousal_Total_Total_Number']").html(row[1]);break;
+                                     case 'EEG arousal REM With resp event':records[I]['EEG_arousal_REM_With_resp_event']=row[1];td.parent().find("td[data-id='EEG_arousal_REM_With_resp_event']").html(row[1]);break;
+                                     case 'EEG arousal NREM With resp event':records[I]['EEG_arousal_NREM_With_resp_event']=row[1];td.parent().find("td[data-id='EEG_arousal_NREM_With_resp_event']").html(row[1]);break;
+                                     case 'EEG arousal Total With resp event':records[I]['EEG_arousal_Total_With_resp_event']=row[1];td.parent().find("td[data-id='EEG_arousal_Total_With_resp_event']").html(row[1]);break;
+                                     case 'EEG arousal REM With resp event & desat':records[I]['EEG_arousal_REM_With_resp_event_and_desat']=row[1];td.parent().find("td[data-id='EEG_arousal_REM_With_resp_event_and_desat']").html(row[1]);break;
+                                     case 'EEG arousal NREM With resp event & desat':records[I]['EEG_arousal_NREM_With_resp_event_and_desat']=row[1];td.parent().find("td[data-id='EEG_arousal_NREM_With_resp_event_and_desat']").html(row[1]);break;
+                                     case 'EEG arousal Total With resp event & desat':records[I]['EEG_arousal_Total_With_resp_event_and_desat']=row[1];td.parent().find("td[data-id='EEG_arousal_Total_With_resp_event_and_desat']").html(row[1]);break;
+                                     case 'EEG arousal REM Leg Mvt arousal':records[I]['EEG_arousal_REM_Leg_Mvt_arousal']=row[1];td.parent().find("td[data-id='EEG_arousal_REM_Leg_Mvt_arousal']").html(row[1]);break;
+                                     case 'EEG arousal NREM Leg Mvt arousal':records[I]['EEG_arousal_NREM_Leg_Mvt_arousal']=row[1];td.parent().find("td[data-id='EEG_arousal_NREM_Leg_Mvt_arousal']").html(row[1]);break;
+                                     case 'EEG arousal Total Leg Mvt arousal':records[I]['EEG_arousal_Total_Leg_Mvt_arousal']=row[1];td.parent().find("td[data-id='EEG_arousal_Total_Leg_Mvt_arousal']").html(row[1]);break;
+                                     case 'EEG arousal REM Spontaneous arousal':records[I]['EEG_arousal_REM_Spontaneous_arousal']=row[1];td.parent().find("td[data-id='EEG_arousal_REM_Spontaneous_arousal']").html(row[1]);break;
+                                     case 'EEG arousal NREM Spontaneous arousal':records[I]['EEG_arousal_NREM_Spontaneous_arousal']=row[1];td.parent().find("td[data-id='EEG_arousal_NREM_Spontaneous_arousal']").html(row[1]);break;
+                                     case 'EEG arousal Total Spontaneous arousal':records[I]['EEG_arousal_Total_Spontaneous_arousal']=row[1];td.parent().find("td[data-id='EEG_arousal_Total_Spontaneous_arousal']").html(row[1]);break;
+                                     case 'Central Apnea Number':records[I]['Central_Apnea_Number']=row[1];td.parent().find("td[data-id='Central_Apnea_Number']").html(row[1]);break;
+                                     case 'Central Apnea Max (sec)':records[I]['Central_Apnea_Max_sec']=row[1];td.parent().find("td[data-id='Central_Apnea_Max_sec']").html(row[1]);break;
+                                     case 'Central Apnea Mean (sec)':records[I]['Central_Apnea_Mean_sec']=row[1];td.parent().find("td[data-id='Central_Apnea_Mean_sec']").html(row[1]);break;
+                                     case 'Central Apnea Tot time (min)':records[I]['Central_Apnea_Tot_time_min']=row[1];td.parent().find("td[data-id='Central_Apnea_Tot_time_min']").html(row[1]);break;
+                                     case 'Central Apnea % of TST':records[I]['Central_Apnea_percent_of_TST']=row[1];td.parent().find("td[data-id='Central_Apnea_percent_of_TST']").html(row[1]);break;
+                                     case 'Central Apnea Index':records[I]['Central_Apnea_Index']=row[1];td.parent().find("td[data-id='Central_Apnea_Index']").html(row[1]);break;
+                                     case 'Obstructive Apnea Number':records[I]['Obstructive_Apnea_Number']=row[1];td.parent().find("td[data-id='Obstructive_Apnea_Number']").html(row[1]);break;
+                                     case 'Obstructive Apnea Max (sec)':records[I]['Obstructive_Apnea_Max_sec']=row[1];td.parent().find("td[data-id='Obstructive_Apnea_Max_sec']").html(row[1]);break;
+                                     case 'Obstructive Apnea Mean (sec)':records[I]['Obstructive_Apnea_Mean_sec']=row[1];td.parent().find("td[data-id='Obstructive_Apnea_Mean_sec']").html(row[1]);break;
+                                     case 'Obstructive Apnea Tot time (min)':records[I]['Obstructive_Apnea_Tot_time_min']=row[1];td.parent().find("td[data-id='Obstructive_Apnea_Tot_time_min']").html(row[1]);break;
+                                     case 'Obstructive Apnea % of TST':records[I]['Obstructive_Apnea_percent_of_TST']=row[1];td.parent().find("td[data-id='Obstructive_Apnea_percent_of_TST']").html(row[1]);break;
+                                     case 'Obstructive Apnea Index':records[I]['Obstructive_Apnea_Index']=row[1];td.parent().find("td[data-id='Obstructive_Apnea_Index']").html(row[1]);break;
+                                     case 'Hypopnea Number':records[I]['Hypopnea_Number']=row[1];td.parent().find("td[data-id='Hypopnea_Number']").html(row[1]);break;
+                                     case 'Hypopnea Max (sec)':records[I]['Hypopnea_Max_sec']=row[1];td.parent().find("td[data-id='Hypopnea_Max_sec']").html(row[1]);break;
+                                     case 'Hypopnea Mean (sec)':records[I]['Hypopnea_Mean_sec']=row[1];td.parent().find("td[data-id='Hypopnea_Mean_sec']").html(row[1]);break;
+                                     case 'Hypopnea Tot time (min)':records[I]['Hypopnea_Tot_time_min']=row[1];td.parent().find("td[data-id='Hypopnea_Tot_time_min']").html(row[1]);break;
+                                     case 'Hypopnea % of TST':records[I]['Hypopnea_percent_of_TST']=row[1];td.parent().find("td[data-id='Hypopnea_percent_of_TST']").html(row[1]);break;
+                                     case 'Hypopnea Index':records[I]['Hypopnea_Index']=row[1];td.parent().find("td[data-id='Hypopnea_Index']").html(row[1]);break;
+                                     case 'Chicago Hypopnea Number':records[I]['Chicago_Hypopnea_Number']=row[1];td.parent().find("td[data-id='Chicago_Hypopnea_Number']").html(row[1]);break;
+                                     case 'Chicago Hypopnea Index':records[I]['Chicago_Hypopnea_Index']=row[1];td.parent().find("td[data-id='Chicago_Hypopnea_Index']").html(row[1]);break;
+                                     case 'Total (A+H) Number':records[I]['Total_A_H_Number']=row[1];td.parent().find("td[data-id='Total_A_H_Number']").html(row[1]);break;
+                                     case 'Total (A+H) Max (sec)':records[I]['Total_A_H_Max_sec']=row[1];td.parent().find("td[data-id='Total_A_H_Max_sec']").html(row[1]);break;
+                                     case 'Total (A+H) Mean (sec)':records[I]['Total_A_H_Mean_sec']=row[1];td.parent().find("td[data-id='Total_A_H_Mean_sec']").html(row[1]);break;
+                                     case 'Total (A+H) Tot time (min)':records[I]['Total_A_H_Tot_time_min']=row[1];td.parent().find("td[data-id='Total_A_H_Tot_time_min']").html(row[1]);break;
+                                     case 'Total (A+H) % of TST':records[I]['Total_A_H_percent_of_TST']=row[1];td.parent().find("td[data-id='Total_A_H_percent_of_TST']").html(row[1]);break;
+                                     case 'Total AHI Index':records[I]['Total_AHI_Index']=row[1];td.parent().find("td[data-id='Total_AHI_Index']").html(row[1]);break;
+                                     case 'REM RDI':records[I]['REM_RDI']=row[1];td.parent().find("td[data-id='REM_RDI']").html(row[1]);break;
+                                     case 'NREM RDI':records[I]['NREM_RDI']=row[1];td.parent().find("td[data-id='NREM_RDI']").html(row[1]);break;
+                                     case 'Total RDI':records[I]['Total_RDI']=row[1];td.parent().find("td[data-id='Total_RDI']").html(row[1]);break;
+                                     case 'SaO2 <50% (min) WK':records[I]['SaO2_lt_50percent_min_WK']=row[1];td.parent().find("td[data-id='SaO2_lt_50percent_min_WK']").html(row[1]);break;
+                                     case 'SaO2 <50% (min) REM':records[I]['SaO2_lt_50percent_min_REM']=row[1];td.parent().find("td[data-id='SaO2_lt_50percent_min_REM']").html(row[1]);break;
+                                     case 'SaO2 <50% (min) NREM':records[I]['SaO2_lt_50percent_min_NREM']=row[1];td.parent().find("td[data-id='SaO2_lt_50percent_min_NREM']").html(row[1]);break;
+                                     case 'SaO2 <50% (min) TOTAL':records[I]['SaO2_lt_50percent_min_TOTAL']=row[1];td.parent().find("td[data-id='SaO2_lt_50percent_min_TOTAL']").html(row[1]);break;
+                                     case 'SaO2 <60% (min) WK':records[I]['SaO2_lt_60percent_min_WK']=row[1];td.parent().find("td[data-id='SaO2_lt_60percent_min_WK']").html(row[1]);break;
+                                     case 'SaO2 <60% (min) REM':records[I]['SaO2_lt_60percent_min_REM']=row[1];td.parent().find("td[data-id='SaO2_lt_60percent_min_REM']").html(row[1]);break;
+                                     case 'SaO2 <60% (min) NREM':records[I]['SaO2_lt_60percent_min_NREM']=row[1];td.parent().find("td[data-id='SaO2_lt_60percent_min_NREM']").html(row[1]);break;
+                                     case 'SaO2 <60% (min) TOTAL':records[I]['SaO2_lt_60percent_min_TOTAL']=row[1];td.parent().find("td[data-id='SaO2_lt_60percent_min_TOTAL']").html(row[1]);break;
+                                     case 'SaO2 <70% (min) WK':records[I]['SaO2_lt_70percent_min_WK']=row[1];td.parent().find("td[data-id='SaO2_lt_70percent_min_WK']").html(row[1]);break;
+                                     case 'SaO2 <70% (min) REM':records[I]['SaO2_lt_70percent_min_REM']=row[1];td.parent().find("td[data-id='SaO2_lt_70percent_min_REM']").html(row[1]);break;
+                                     case 'SaO2 <70% (min) NREM':records[I]['SaO2_lt_70percent_min_NREM']=row[1];td.parent().find("td[data-id='SaO2_lt_70percent_min_NREM']").html(row[1]);break;
+                                     case 'SaO2 <70% (min) TOTAL':records[I]['SaO2_lt_70percent_min_TOTAL']=row[1];td.parent().find("td[data-id='SaO2_lt_70percent_min_TOTAL']").html(row[1]);break;
+                                     case 'SaO2 <75% (min) WK':records[I]['SaO2_lt_75percent_min_WK']=row[1];td.parent().find("td[data-id='SaO2_lt_75percent_min_WK']").html(row[1]);break;
+                                     case 'SaO2 <75% (min) REM':records[I]['SaO2_lt_75percent_min_REM']=row[1];td.parent().find("td[data-id='SaO2_lt_75percent_min_REM']").html(row[1]);break;
+                                     case 'SaO2 <75% (min) NREM':records[I]['SaO2_lt_75percent_min_NREM']=row[1];td.parent().find("td[data-id='SaO2_lt_75percent_min_NREM']").html(row[1]);break;
+                                     case 'SaO2 <75% (min) TOTAL':records[I]['SaO2_lt_75percent_min_TOTAL']=row[1];td.parent().find("td[data-id='SaO2_lt_75percent_min_TOTAL']").html(row[1]);break;
+                                     case 'SaO2 <80% (min) WK':records[I]['SaO2_lt_80percent_min_WK']=row[1];td.parent().find("td[data-id='SaO2_lt_80percent_min_WK']").html(row[1]);break;
+                                     case 'SaO2 <80% (min) REM':records[I]['SaO2_lt_80percent_min_REM']=row[1];td.parent().find("td[data-id='SaO2_lt_80percent_min_REM']").html(row[1]);break;
+                                     case 'SaO2 <80% (min) NREM':records[I]['SaO2_lt_80percent_min_NREM']=row[1];td.parent().find("td[data-id='SaO2_lt_80percent_min_NREM']").html(row[1]);break;
+                                     case 'SaO2 <80% (min) TOTAL':records[I]['SaO2_lt_80percent_min_TOTAL']=row[1];td.parent().find("td[data-id='SaO2_lt_80percent_min_TOTAL']").html(row[1]);break;
+                                     case 'SaO2 <85% (min) WK':records[I]['SaO2_lt_85percent_min_WK']=row[1];td.parent().find("td[data-id='SaO2_lt_85percent_min_WK']").html(row[1]);break;
+                                     case 'SaO2 <85% (min) REM':records[I]['SaO2_lt_85percent_min_REM']=row[1];td.parent().find("td[data-id='SaO2_lt_85percent_min_REM']").html(row[1]);break;
+                                     case 'SaO2 <85% (min) NREM':records[I]['SaO2_lt_85percent_min_NREM']=row[1];td.parent().find("td[data-id='SaO2_lt_85percent_min_NREM']").html(row[1]);break;
+                                     case 'SaO2 <85% (min) TOTAL':records[I]['SaO2_lt_85percent_min_TOTAL']=row[1];td.parent().find("td[data-id='SaO2_lt_85percent_min_TOTAL']").html(row[1]);break;
+                                     case 'SaO2 <90% (min) WK':records[I]['SaO2_lt_90percent_min_WK']=row[1];td.parent().find("td[data-id='SaO2_lt_90percent_min_WK']").html(row[1]);break;
+                                     case 'SaO2 <90% (min) REM':records[I]['SaO2_lt_90percent_min_REM']=row[1];td.parent().find("td[data-id='SaO2_lt_90percent_min_REM']").html(row[1]);break;
+                                     case 'SaO2 <90% (min) NREM':records[I]['SaO2_lt_90percent_min_NREM']=row[1];td.parent().find("td[data-id='SaO2_lt_90percent_min_NREM']").html(row[1]);break;
+                                     case 'SaO2 <90% (min) TOTAL':records[I]['SaO2_lt_90percent_min_TOTAL']=row[1];td.parent().find("td[data-id='SaO2_lt_90percent_min_TOTAL']").html(row[1]);break;
+                                     case 'SaO2 <95% (min) WK':records[I]['SaO2_lt_95percent_min_WK']=row[1];td.parent().find("td[data-id='SaO2_lt_95percent_min_WK']").html(row[1]);break;
+                                     case 'SaO2 <95% (min) REM':records[I]['SaO2_lt_95percent_min_REM']=row[1];td.parent().find("td[data-id='SaO2_lt_95percent_min_REM']").html(row[1]);break;
+                                     case 'SaO2 <95% (min) NREM':records[I]['SaO2_lt_95percent_min_NREM']=row[1];td.parent().find("td[data-id='SaO2_lt_95percent_min_NREM']").html(row[1]);break;
+                                     case 'SaO2 <95% (min) TOTAL':records[I]['SaO2_lt_95percent_min_TOTAL']=row[1];td.parent().find("td[data-id='SaO2_lt_95percent_min_TOTAL']").html(row[1]);break;
+                                     case 'Average SaO2 (%)  WK':records[I]['Average_SaO2_percent__WK']=row[1];td.parent().find("td[data-id='Average_SaO2_percent__WK']").html(row[1]);break;
+                                     case 'Average SaO2 (%) REM':records[I]['Average_SaO2_percent_REM']=row[1];td.parent().find("td[data-id='Average_SaO2_percent_REM']").html(row[1]);break;
+                                     case 'Average SaO2 (%) NREM':records[I]['Average_SaO2_percent_NREM']=row[1];td.parent().find("td[data-id='Average_SaO2_percent_NREM']").html(row[1]);break;
+                                     case 'Average SaO2 (%) TOTAL':records[I]['Average_SaO2_percent_TOTAL']=row[1];td.parent().find("td[data-id='Average_SaO2_percent_TOTAL']").html(row[1]);break;
+                                     case 'Desat Index SaO2 (#/hour) WK':records[I]['Desat_Index_SaO2_Number_per_hour_WK']=row[1];td.parent().find("td[data-id='Desat_Index_SaO2_Number_per_hour_WK']").html(row[1]);break;
+                                     case 'Desat Index SaO2 (#/hour) REM':records[I]['Desat_Index_SaO2_Number_per_hour_REM']=row[1];td.parent().find("td[data-id='Desat_Index_SaO2_Number_per_hour_REM']").html(row[1]);break;
+                                     case 'Desat Index SaO2 (#/hour) NREM':records[I]['Desat_Index_SaO2_Number_per_hour_NREM']=row[1];td.parent().find("td[data-id='Desat_Index_SaO2_Number_per_hour_NREM']").html(row[1]);break;
+                                     case 'Desat Index SaO2 (#/hour) TOTAL':records[I]['Desat_Index_SaO2_Number_per_hour_TOTAL']=row[1];td.parent().find("td[data-id='Desat_Index_SaO2_Number_per_hour_TOTAL']").html(row[1]);break;
+                                     case 'Desat max SaO2 (%) WK':records[I]['Desat_max_SaO2_percent_WK']=row[1];td.parent().find("td[data-id='Desat_max_SaO2_percent_WK']").html(row[1]);break;
+                                     case 'Desat max SaO2 (%) REM':records[I]['Desat_max_SaO2_percent_REM']=row[1];td.parent().find("td[data-id='Desat_max_SaO2_percent_REM']").html(row[1]);break;
+                                     case 'Desat max SaO2 (%) NREM':records[I]['Desat_max_SaO2_percent_NREM']=row[1];td.parent().find("td[data-id='Desat_max_SaO2_percent_NREM']").html(row[1]);break;
+                                     case 'Desat max SaO2 (%) TOTAL':records[I]['Desat_max_SaO2_percent_TOTAL']=row[1];td.parent().find("td[data-id='Desat_max_SaO2_percent_TOTAL']").html(row[1]);break;
+                                     case 'Average SaO2 desaturation (%)':records[I]['Average_SaO2_desaturation_percent']=row[1];td.parent().find("td[data-id='Average_SaO2_desaturation_percent']").html(row[1]);break;
+                                     case 'Minimum SaO2 (%)':records[I]['Minimum_SaO2_percent']=row[1];td.parent().find("td[data-id='Minimum_SaO2_percent']").html(row[1]);break;
+                                     case 'Position Left time (min)':records[I]['Position_Left_time_min']=row[1];td.parent().find("td[data-id='Position_Left_time_min']").html(row[1]);break;
+                                     case 'Position Left sleep (%)':records[I]['Position_Left_sleep_percent']=row[1];td.parent().find("td[data-id='Position_Left_sleep_percent']").html(row[1]);break;
+                                     case 'Position Left REM (%)':records[I]['Position_Left_REM_percent']=row[1];td.parent().find("td[data-id='Position_Left_REM_percent']").html(row[1]);break;
+                                     case 'Position Left SWS (%)':records[I]['Position_Left_SWS_percent']=row[1];td.parent().find("td[data-id='Position_Left_SWS_percent']").html(row[1]);break;
+                                     case 'Position Left Central apnea (#)':records[I]['Position_Left_Central_apnea_Number']=row[1];td.parent().find("td[data-id='Position_Left_Central_apnea_Number']").html(row[1]);break;
+                                     case 'Position Left Obstructive apnea (#)':records[I]['Position_Left_Obstructive_apnea_Number']=row[1];td.parent().find("td[data-id='Position_Left_Obstructive_apnea_Number']").html(row[1]);break;
+                                     case 'Position Left Hypopnea (#)':records[I]['Position_Left_Hypopnea_Number']=row[1];td.parent().find("td[data-id='Position_Left_Hypopnea_Number']").html(row[1]);break;
+                                     case 'Position Left desaturation (#)':records[I]['Position_Left_desaturation_Number']=row[1];td.parent().find("td[data-id='Position_Left_desaturation_Number']").html(row[1]);break;
+                                     case 'Position Left AHI':records[I]['Position_Left_AHI']=row[1];td.parent().find("td[data-id='Position_Left_AHI']").html(row[1]);break;
+                                     case 'Position Prone time (min)':records[I]['Position_Prone_time_min']=row[1];td.parent().find("td[data-id='Position_Prone_time_min']").html(row[1]);break;
+                                     case 'Position Prone sleep (%)':records[I]['Position_Prone_sleep_percent']=row[1];td.parent().find("td[data-id='Position_Prone_sleep_percent']").html(row[1]);break;
+                                     case 'Position Prone REM (%)':records[I]['Position_Prone_REM_percent']=row[1];td.parent().find("td[data-id='Position_Prone_REM_percent']").html(row[1]);break;
+                                     case 'Position Prone SWS (%)':records[I]['Position_Prone_SWS_percent']=row[1];td.parent().find("td[data-id='Position_Prone_SWS_percent']").html(row[1]);break;
+                                     case 'Position Prone Central apnea (#)':records[I]['Position_Prone_Central_apnea_Number']=row[1];td.parent().find("td[data-id='Position_Prone_Central_apnea_Number']").html(row[1]);break;
+                                     case 'Position Prone Obstructive apnea (#)':records[I]['Position_Prone_Obstructive_apnea_Number']=row[1];td.parent().find("td[data-id='Position_Prone_Obstructive_apnea_Number']").html(row[1]);break;
+                                     case 'Position Prone Hypopnea (#)':records[I]['Position_Prone_Hypopnea_Number']=row[1];td.parent().find("td[data-id='Position_Prone_Hypopnea_Number']").html(row[1]);break;
+                                     case 'Position Prone desaturation (#)':records[I]['Position_Prone_desaturation_Number']=row[1];td.parent().find("td[data-id='Position_Prone_desaturation_Number']").html(row[1]);break;
+                                     case 'Position Prone AHI':records[I]['Position_Prone_AHI']=row[1];td.parent().find("td[data-id='Position_Prone_AHI']").html(row[1]);break;
+                                     case 'Position Prone Left time (min)':records[I]['Position_Prone_Left_time_min']=row[1];td.parent().find("td[data-id='Position_Prone_Left_time_min']").html(row[1]);break;
+                                     case 'Position Prone Left sleep (%)':records[I]['Position_Prone_Left_sleep_percent']=row[1];td.parent().find("td[data-id='Position_Prone_Left_sleep_percent']").html(row[1]);break;
+                                     case 'Position Prone Left REM (%)':records[I]['Position_Prone_Left_REM_percent']=row[1];td.parent().find("td[data-id='Position_Prone_Left_REM_percent']").html(row[1]);break;
+                                     case 'Position Prone Left SWS (%)':records[I]['Position_Prone_Left_SWS_percent']=row[1];td.parent().find("td[data-id='Position_Prone_Left_SWS_percent']").html(row[1]);break;
+                                     case 'Position Prone Left Central apnea (#)':records[I]['Position_Prone_Left_Central_apnea_Number']=row[1];td.parent().find("td[data-id='Position_Prone_Left_Central_apnea_Number']").html(row[1]);break;
+                                     case 'Position Prone Left Obstructive apnea (#)':records[I]['Position_Prone_Left_Obstructive_apnea_Number']=row[1];td.parent().find("td[data-id='Position_Prone_Left_Obstructive_apnea_Number']").html(row[1]);break;
+                                     case 'Position Prone Left Hypopnea (#)':records[I]['Position_Prone_Left_Hypopnea_Number']=row[1];td.parent().find("td[data-id='Position_Prone_Left_Hypopnea_Number']").html(row[1]);break;
+                                     case 'Position Prone Left desaturation (#)':records[I]['Position_Prone_Left_desaturation_Number']=row[1];td.parent().find("td[data-id='Position_Prone_Left_desaturation_Number']").html(row[1]);break;
+                                     case 'Position Prone Left AHI':records[I]['Position_Prone_Left_AHI']=row[1];td.parent().find("td[data-id='Position_Prone_Left_AHI']").html(row[1]);break;
+                                     case 'Position Supine time (min)':records[I]['Position_Supine_time_min']=row[1];td.parent().find("td[data-id='Position_Supine_time_min']").html(row[1]);break;
+                                     case 'Position Supine sleep (%)':records[I]['Position_Supine_sleep_percent']=row[1];td.parent().find("td[data-id='Position_Supine_sleep_percent']").html(row[1]);break;
+                                     case 'Position Supine REM (%)':records[I]['Position_Supine_REM_percent']=row[1];td.parent().find("td[data-id='Position_Supine_REM_percent']").html(row[1]);break;
+                                     case 'Position Supine SWS (%)':records[I]['Position_Supine_SWS_percent']=row[1];td.parent().find("td[data-id='Position_Supine_SWS_percent']").html(row[1]);break;
+                                     case 'Position Supine Central apnea (#)':records[I]['Position_Supine_Central_apnea_Number']=row[1];td.parent().find("td[data-id='Position_Supine_Central_apnea_Number']").html(row[1]);break;
+                                     case 'Position Supine Obstructive apnea (#)':records[I]['Position_Supine_Obstructive_apnea_Number']=row[1];td.parent().find("td[data-id='Position_Supine_Obstructive_apnea_Number']").html(row[1]);break;
+                                     case 'Position Supine Hypopnea (#)':records[I]['Position_Supine_Hypopnea_Number']=row[1];td.parent().find("td[data-id='Position_Supine_Hypopnea_Number']").html(row[1]);break;
+                                     case 'Position Supine desaturation (#)':records[I]['Position_Supine_desaturation_Number']=row[1];td.parent().find("td[data-id='Position_Supine_desaturation_Number']").html(row[1]);break;
+                                     case 'Position Supine AHI':records[I]['Position_Supine_AHI']=row[1];td.parent().find("td[data-id='Position_Supine_AHI']").html(row[1]);break;
+                                     case 'Position Supine Left time (min)':records[I]['Position_Supine_Left_time_min']=row[1];td.parent().find("td[data-id='Position_Supine_Left_time_min']").html(row[1]);break;
+                                     case 'Position Supine Left sleep (%)':records[I]['Position_Supine_Left_sleep_percent']=row[1];td.parent().find("td[data-id='Position_Supine_Left_sleep_percent']").html(row[1]);break;
+                                     case 'Position Supine Left REM (%)':records[I]['Position_Supine_Left_REM_percent']=row[1];td.parent().find("td[data-id='Position_Supine_Left_REM_percent']").html(row[1]);break;
+                                     case 'Position Supine Left SWS (%)':records[I]['Position_Supine_Left_SWS_percent']=row[1];td.parent().find("td[data-id='Position_Supine_Left_SWS_percent']").html(row[1]);break;
+                                     case 'Position Supine Left Central apnea (#)':records[I]['Position_Supine_Left_Central_apnea_Number']=row[1];td.parent().find("td[data-id='Position_Supine_Left_Central_apnea_Number']").html(row[1]);break;
+                                     case 'Position Supine Left Obstructive apnea (#)':records[I]['Position_Supine_Left_Obstructive_apnea_Number']=row[1];td.parent().find("td[data-id='Position_Supine_Left_Obstructive_apnea_Number']").html(row[1]);break;
+                                     case 'Position Supine Left Hypopnea (#)':records[I]['Position_Supine_Left_Hypopnea_Number']=row[1];td.parent().find("td[data-id='Position_Supine_Left_Hypopnea_Number']").html(row[1]);break;
+                                     case 'Position Supine Left desaturation (#)':records[I]['Position_Supine_Left_desaturation_Number']=row[1];td.parent().find("td[data-id='Position_Supine_Left_desaturation_Number']").html(row[1]);break;
+                                     case 'Position Supine Left AHI':records[I]['Position_Supine_Left_AHI']=row[1];td.parent().find("td[data-id='Position_Supine_Left_AHI']").html(row[1]);break;
+                                     case 'Position Right time (min)':records[I]['Position_Right_time_min']=row[1];td.parent().find("td[data-id='Position_Right_time_min']").html(row[1]);break;
+                                     case 'Position Right sleep (%)':records[I]['Position_Right_sleep_percent']=row[1];td.parent().find("td[data-id='Position_Right_sleep_percent']").html(row[1]);break;
+                                     case 'Position Right REM (%)':records[I]['Position_Right_REM_percent']=row[1];td.parent().find("td[data-id='Position_Right_REM_percent']").html(row[1]);break;
+                                     case 'Position Right SWS (%)':records[I]['Position_Right_SWS_percent']=row[1];td.parent().find("td[data-id='Position_Right_SWS_percent']").html(row[1]);break;
+                                     case 'Position Right Central apnea (#)':records[I]['Position_Right_Central_apnea_Number']=row[1];td.parent().find("td[data-id='Position_Right_Central_apnea_Number']").html(row[1]);break;
+                                     case 'Position Right Obstructive apnea (#)':records[I]['Position_Right_Obstructive_apnea_Number']=row[1];td.parent().find("td[data-id='Position_Right_Obstructive_apnea_Number']").html(row[1]);break;
+                                     case 'Position Right Hypopnea (#)':records[I]['Position_Right_Hypopnea_Number']=row[1];td.parent().find("td[data-id='Position_Right_Hypopnea_Number']").html(row[1]);break;
+                                     case 'Position Right desaturation (#)':records[I]['Position_Right_desaturation_Number']=row[1];td.parent().find("td[data-id='Position_Right_desaturation_Number']").html(row[1]);break;
+                                     case 'Position Right AHI':records[I]['Position_Right_AHI']=row[1];td.parent().find("td[data-id='Position_Right_AHI']").html(row[1]);break;
+                                     case 'Position Supine Right time (min)':records[I]['Position_Supine_Right_time_min']=row[1];td.parent().find("td[data-id='Position_Supine_Right_time_min']").html(row[1]);break;
+                                     case 'Position Supine Right sleep (%)':records[I]['Position_Supine_Right_sleep_percent']=row[1];td.parent().find("td[data-id='Position_Supine_Right_sleep_percent']").html(row[1]);break;
+                                     case 'Position Supine Right REM (%)':records[I]['Position_Supine_Right_REM_percent']=row[1];td.parent().find("td[data-id='Position_Supine_Right_REM_percent']").html(row[1]);break;
+                                     case 'Position Supine Right SWS (%)':records[I]['Position_Supine_Right_SWS_percent']=row[1];td.parent().find("td[data-id='Position_Supine_Right_SWS_percent']").html(row[1]);break;
+                                     case 'Position Supine Right Central apnea (#)':records[I]['Position_Supine_Right_Central_apnea_Number']=row[1];td.parent().find("td[data-id='Position_Supine_Right_Central_apnea_Number']").html(row[1]);break;
+                                     case 'Position Supine Right Obstructive apnea (#)':records[I]['Position_Supine_Right_Obstructive_apnea_Number']=row[1];td.parent().find("td[data-id='Position_Supine_Right_Obstructive_apnea_Number']").html(row[1]);break;
+                                     case 'Position Supine Right Hypopnea (#)':records[I]['Position_Supine_Right_Hypopnea_Number']=row[1];td.parent().find("td[data-id='Position_Supine_Right_Hypopnea_Number']").html(row[1]);break;
+                                     case 'Position Supine Right desaturation (#)':records[I]['Position_Supine_Right_desaturation_Number']=row[1];td.parent().find("td[data-id='Position_Supine_Right_desaturation_Number']").html(row[1]);break;
+                                     case 'Position Supine Right AHI':records[I]['Position_Supine_Right_AHI']=row[1];td.parent().find("td[data-id='Position_Supine_Right_AHI']").html(row[1]);break;
+                                     case 'Position Prone Right time (min)':records[I]['Position_Prone_Right_time_min']=row[1];td.parent().find("td[data-id='Position_Prone_Right_time_min']").html(row[1]);break;
+                                     case 'Position Prone Right sleep (%)':records[I]['Position_Prone_Right_sleep_percent']=row[1];td.parent().find("td[data-id='Position_Prone_Right_sleep_percent']").html(row[1]);break;
+                                     case 'Position Prone Right REM (%)':records[I]['Position_Prone_Right_REM_percent']=row[1];td.parent().find("td[data-id='Position_Prone_Right_REM_percent']").html(row[1]);break;
+                                     case 'Position Prone Right SWS (%)':records[I]['Position_Prone_Right_SWS_percent']=row[1];td.parent().find("td[data-id='Position_Prone_Right_SWS_percent']").html(row[1]);break;
+                                     case 'Position Prone Right Central apnea (#)':records[I]['Position_Prone_Right_Central_apnea_Number']=row[1];td.parent().find("td[data-id='Position_Prone_Right_Central_apnea_Number']").html(row[1]);break;
+                                     case 'Position Prone Right Obstructive apnea (#)':records[I]['Position_Prone_Right_Obstructive_apnea_Number']=row[1];td.parent().find("td[data-id='Position_Prone_Right_Obstructive_apnea_Number']").html(row[1]);break;
+                                     case 'Position Prone Right Hypopnea (#)':records[I]['Position_Prone_Right_Hypopnea_Number']=row[1];td.parent().find("td[data-id='Position_Prone_Right_Hypopnea_Number']").html(row[1]);break;
+                                     case 'Position Prone Right desaturation (#)':records[I]['Position_Prone_Right_desaturation_Number']=row[1];td.parent().find("td[data-id='Position_Prone_Right_desaturation_Number']").html(row[1]);break;
+                                     case 'Position Prone Right AHI':records[I]['Position_Prone_Right_AHI']=row[1];td.parent().find("td[data-id='Position_Prone_Right_AHI']").html(row[1]);break;
+                                     case 'Total number of snoring episodes':records[I]['Total_number_of_snoring_episodes']=row[1];td.parent().find("td[data-id='Total_number_of_snoring_episodes']").html(row[1]);break;
+                                     case 'Mean duration of snoring episodes (sec)':records[I]['Mean_duration_of_snoring_episodes_sec']=row[1];td.parent().find("td[data-id='Mean_duration_of_snoring_episodes_sec']").html(row[1]);break;
+                                     case 'Total time with snoring (min)':records[I]['Total_time_with_snoring_min']=row[1];td.parent().find("td[data-id='Total_time_with_snoring_min']").html(row[1]);break;
+                                     case 'Total time with snoring (%)':records[I]['Total_time_with_snoring_percent']=row[1];td.parent().find("td[data-id='Total_time_with_snoring_percent']").html(row[1]);break;
+                                     case 'Mean duration of PLM episodes (sec)':records[I]['Mean_duration_of_PLM_episodes_sec']=row[1];td.parent().find("td[data-id='Mean_duration_of_PLM_episodes_sec']").html(row[1]);break;
+                                     case 'Total time with PLM (min)':records[I]['Total_time_with_PLM_min']=row[1];td.parent().find("td[data-id='Total_time_with_PLM_min']").html(row[1]);break;
+                                     case 'Total time with PLM (% of sleep)':records[I]['Total_time_with_PLM_percent_of_sleep']=row[1];td.parent().find("td[data-id='Total_time_with_PLM_percent_of_sleep']").html(row[1]);break;
+                                     case 'PLM sequences(episodes)':records[I]['PLM_sequences_episodes']=row[1];td.parent().find("td[data-id='PLM_sequences_episodes']").html(row[1]);break;
+                                     case 'Total number of Leg movements':records[I]['Total_number_of_Leg_movements']=row[1];td.parent().find("td[data-id='Total_number_of_Leg_movements']").html(row[1]);break;
+                                     case 'PLM Index (/hr)':records[I]['PLM_Index_per_hr']=row[1];td.parent().find("td[data-id='PLM_Index_per_hr']").html(row[1]);break;
+                                     case 'Mean Heart Rate (BPM) WK':records[I]['Mean_Heart_Rate_BPM_WK']=row[1];td.parent().find("td[data-id='Mean_Heart_Rate_BPM_WK']").html(row[1]);break;
+                                     case 'Mean Heart Rate (BPM) REM':records[I]['Mean_Heart_Rate_BPM_REM']=row[1];td.parent().find("td[data-id='Mean_Heart_Rate_BPM_REM']").html(row[1]);break;
+                                     case 'Mean Heart Rate (BPM) NREM':records[I]['Mean_Heart_Rate_BPM_NREM']=row[1];td.parent().find("td[data-id='Mean_Heart_Rate_BPM_NREM']").html(row[1]);break;
+                                     case 'Mean Heart Rate (BPM) S1':records[I]['Mean_Heart_Rate_BPM_S1']=row[1];td.parent().find("td[data-id='Mean_Heart_Rate_BPM_S1']").html(row[1]);break;
+                                     case 'Mean Heart Rate (BPM) S2':records[I]['Mean_Heart_Rate_BPM_S2']=row[1];td.parent().find("td[data-id='Mean_Heart_Rate_BPM_S2']").html(row[1]);break;
+                                     case 'Mean Heart Rate (BPM) S3':records[I]['Mean_Heart_Rate_BPM_S3']=row[1];td.parent().find("td[data-id='Mean_Heart_Rate_BPM_S3']").html(row[1]);break;
+                                     case 'Mean Heart Rate (BPM) S4':records[I]['Mean_Heart_Rate_BPM_S4']=row[1];td.parent().find("td[data-id='Mean_Heart_Rate_BPM_S4']").html(row[1]);break;
+                                     case 'Median Heart Rate (BPM) WK':records[I]['Median_Heart_Rate_BPM_WK']=row[1];td.parent().find("td[data-id='Median_Heart_Rate_BPM_WK']").html(row[1]);break;
+                                     case 'Median Heart Rate (BPM) REM':records[I]['Median_Heart_Rate_BPM_REM']=row[1];td.parent().find("td[data-id='Median_Heart_Rate_BPM_REM']").html(row[1]);break;
+                                     case 'Median Heart Rate (BPM) NREM':records[I]['Median_Heart_Rate_BPM_NREM']=row[1];td.parent().find("td[data-id='Median_Heart_Rate_BPM_NREM']").html(row[1]);break;
+                                     case 'Median Heart Rate (BPM) S1':records[I]['Median_Heart_Rate_BPM_S1']=row[1];td.parent().find("td[data-id='Median_Heart_Rate_BPM_S1']").html(row[1]);break;
+                                     case 'Median Heart Rate (BPM) S2':records[I]['Median_Heart_Rate_BPM_S2']=row[1];td.parent().find("td[data-id='Median_Heart_Rate_BPM_S2']").html(row[1]);break;
+                                     case 'Median Heart Rate (BPM) S3':records[I]['Median_Heart_Rate_BPM_S3']=row[1];td.parent().find("td[data-id='Median_Heart_Rate_BPM_S3']").html(row[1]);break;
+                                     case 'Median Heart Rate (BPM) S4':records[I]['Median_Heart_Rate_BPM_S4']=row[1];td.parent().find("td[data-id='Median_Heart_Rate_BPM_S4']").html(row[1]);break;
+                                     case 'Mean RR (BPM) WK':records[I]['Mean_RR_BPM_WK']=row[1];td.parent().find("td[data-id='Mean_RR_BPM_WK']").html(row[1]);break;
+                                     case 'Mean RR (BPM) REM':records[I]['Mean_RR_BPM_REM']=row[1];td.parent().find("td[data-id='Mean_RR_BPM_REM']").html(row[1]);break;
+                                     case 'Mean RR (BPM) NREM':records[I]['Mean_RR_BPM_NREM']=row[1];td.parent().find("td[data-id='Mean_RR_BPM_NREM']").html(row[1]);break;
+                                     case 'Mean RR (BPM) S1':records[I]['Mean_RR_BPM_S1']=row[1];td.parent().find("td[data-id='Mean_RR_BPM_S1']").html(row[1]);break;
+                                     case 'Mean RR (BPM) S2':records[I]['Mean_RR_BPM_S2']=row[1];td.parent().find("td[data-id='Mean_RR_BPM_S2']").html(row[1]);break;
+                                     case 'Mean RR (BPM) S3':records[I]['Mean_RR_BPM_S3']=row[1];td.parent().find("td[data-id='Mean_RR_BPM_S3']").html(row[1]);break;
+                                     case 'Mean RR (BPM) S4':records[I]['Mean_RR_BPM_S4']=row[1];td.parent().find("td[data-id='Mean_RR_BPM_S4']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 75 torr Wake duration (min)':records[I]['TcCO2_gte_75_torr_Wake_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_75_torr_Wake_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 75 torr REM duration (min)':records[I]['TcCO2_gte_75_torr_REM_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_75_torr_REM_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 75 torr NREM duration (min)':records[I]['TcCO2_gte_75_torr_NREM_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_75_torr_NREM_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 75 torr TOTAL duration (min)':records[I]['TcCO2_gte_75_torr_TOTAL_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_75_torr_TOTAL_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 65 torr Wake duration (min)':records[I]['TcCO2_gte_65_torr_Wake_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_65_torr_Wake_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 65 torr REM duration (min)':records[I]['TcCO2_gte_65_torr_REM_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_65_torr_REM_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 65 torr NREM duration (min)':records[I]['TcCO2_gte_65_torr_NREM_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_65_torr_NREM_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 65 torr TOTAL duration (min)':records[I]['TcCO2_gte_65_torr_TOTAL_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_65_torr_TOTAL_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 55 torr Wake duration (min)':records[I]['TcCO2_gte_55_torr_Wake_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_55_torr_Wake_duration_min']").html(row[1]);break;
+                                     case 'TcCO2greater than or equal 55 torr REM duration (min)':records[I]['TcCO2_gte_55_torr_REM_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_55_torr_REM_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 55 torr NREM duration (min)':records[I]['TcCO2_gte_55_torr_NREM_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_55_torr_NREM_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 55 torr TOTAL duration (min)':records[I]['TcCO2_gte_55_torr_TOTAL_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_55_torr_TOTAL_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 50 torr WaKe duration (min)':records[I]['TcCO2_gte_50_torr_WaKe_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_50_torr_WaKe_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 50 torr REM duration (min)':records[I]['TcCO2_gte_50_torr_REM_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_50_torr_REM_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 50 torr NREM duration (min)':records[I]['TcCO2_gte_50_torr_NREM_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_50_torr_NREM_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 50 torr TOTAL duration (min)':records[I]['TcCO2_gte_50_torr_TOTAL_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_50_torr_TOTAL_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 47 torr WaKe duration (min)':records[I]['TcCO2_gte_47_torr_WaKe_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_47_torr_WaKe_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 47 torr REM duration (min)':records[I]['TcCO2_gte_47_torr_REM_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_47_torr_REM_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 47 torr NREM duration (min)':records[I]['TcCO2_gte_47_torr_NREM_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_47_torr_NREM_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 47 torr TOTAL duration (min)':records[I]['TcCO2_gte_47_torr_TOTAL_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_47_torr_TOTAL_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 40 torr Wake duration (min)':records[I]['TcCO2_gte_40_torr_Wake_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_40_torr_Wake_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 40 torr REM duration (min)':records[I]['TcCO2_gte_40_torr_REM_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_40_torr_REM_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 40 torr NREM duration (min)':records[I]['TcCO2_gte_40_torr_NREM_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_40_torr_NREM_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 40 torr TOTAL duration (min)':records[I]['TcCO2_gte_40_torr_TOTAL_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_40_torr_TOTAL_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 30 torr Wake duration (min)':records[I]['TcCO2_gte_30_torr_Wake_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_30_torr_Wake_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 30 torr REM duration (min)':records[I]['TcCO2_gte_30_torr_REM_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_30_torr_REM_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 30 torr NREM duration (min)':records[I]['TcCO2_gte_30_torr_NREM_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_30_torr_NREM_duration_min']").html(row[1]);break;
+                                     case 'TcCO2 greater than or equal 30 torr TOTAL duration (min)':records[I]['TcCO2_gte_30_torr_TOTAL_duration_min']=row[1];td.parent().find("td[data-id='TcCO2_gte_30_torr_TOTAL_duration_min']").html(row[1]);break;
+                                     case 'Average TcCO2 torr Wake':records[I]['Average_TcCO2_torr_Wake']=row[1];td.parent().find("td[data-id='Average_TcCO2_torr_Wake']").html(row[1]);break;
+                                     case 'Average TcCO2 torr REM':records[I]['Average_TcCO2_torr_REM']=row[1];td.parent().find("td[data-id='Average_TcCO2_torr_REM']").html(row[1]);break;
+                                     case 'Average TcCO2 torr NREM':records[I]['Average_TcCO2_torr_NREM']=row[1];td.parent().find("td[data-id='Average_TcCO2_torr_NREM']").html(row[1]);break;
+                                     case 'Average TcCO2 torr TOTAL':records[I]['Average_TcCO2_torr_TOTAL']=row[1];td.parent().find("td[data-id='Average_TcCO2_torr_TOTAL']").html(row[1]);break;
+                                }
+                            }
+                        });
+                        reader.readAsText(file);
+                    }
+                break;
+            }
+        }
+        //-------------------------------------
+        //document.getElementById('PVT_File_Name').addEventListener('change', handleFileSelect,false);
+        //-------------------------------------
+        _before_submit=function(record,dbv){
+            return _set_status_and_participant(record,dbv);
+        }
+        //-------------------------------------
+    }
+</script>
+<style>
+    VmInclude:__BASE__/vmiis/Common-Code/grid/grid.css
+    ul.ui-autocomplete.ui-menu{font-size:12px}
+    .ui-autocomplete li:hover{
+        color:White;
+        background:#96B202;
+        font-weight:normal;
+        outline:none;
+    }
+</style>
